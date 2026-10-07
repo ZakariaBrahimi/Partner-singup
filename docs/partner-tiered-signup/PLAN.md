@@ -1,7 +1,28 @@
 # Plan – Mizaniya Pay tiered Partner signup (frontend + mock data)
 
 Story: ClickUp 869fcne3g. Replaces 869bucgp9, builds on 869bbzntr, fixes 869e4xg74.
-**Status: awaiting approval. No code written yet.**
+**Status: implemented (phases 1–6) on the mock backend. The sections below are the original plan; read "Build notes" first for what changed.**
+
+## Build notes (what differs from the plan above)
+
+Approved scope: frontend only + mock data, Tailwind + shadcn, Vite/React/TS, react-router-dom, react-hook-form + zod, i18next, vitest + Testing Library.
+
+- **shadcn**: the CLI could not reach `ui.shadcn.com` from the build environment (egress policy), so the components in `src/components/ui` are written by hand in shadcn's style (Radix + `cva` + `tailwind-merge`, `components.json` present). Native `<select>` is used instead of Radix Select (58 wilayas, mobile). If you want the upstream files, run `npx shadcn add …` locally and diff.
+- **Tailwind v4** with brand tokens in `src/index.css` (`@theme`), mapped to shadcn's semantic variables.
+- **Enterprise step**: the story lists an "Enterprise-only section" inside business details *and* an "Enterprise documents" step for routed Companies. They are the same thing here: a separate `enterpriseDocs` step before Review, used both when Enterprise is picked on step 1 and when a Company is routed by volume. Enterprise therefore has 6 steps.
+- **Manager ID**: the Company proof list names "manager ID". It is required only when the legal representative is *not* the registered manager (together with the delegation); otherwise the representative's own ID covers it.
+- **Settlement holder mismatch**: warning for AE/trader; **blocking** for Company/Enterprise (the story says they *must* use the company's account). Configurable per type (`holderMismatch`).
+- **Uploads before the account exists**: step 2 holds uploads and the account is created on Continue, so the mock accepts uploads without a session. A real backend needs a pre-signup upload token.
+- **OTP flags are decided by the server**: the mock recomputes `emailVerified/phoneVerified` and ignores what the client sends (kept only for an unchanged, previously verified value).
+- **Resubmit**: only flagged items may change. If the rejection has no flagged fields, edits are unrestricted.
+- **Upgrade**: modelled as a second draft on an APPROVED account (`partner.upgrade`) with its own PENDING/REJECTED state and its own admin row. Approving swaps the type, limits and KYC level; live keys are untouched. After starting an upgrade the partner lands on `firstIncompleteStep` (e.g. AE → Company also asks for the role, which AEs never entered).
+- **Declared-volume update** (needed by "ask the partner to update their declared volume"): new `updateDeclaredVolume`. It never changes limits; a band that would turn a Company into an Enterprise is refused ("start an upgrade").
+- **Limits, thresholds, bands, reasons, AML questions** are placeholders (see `tbd.ts`, `reasons.ts`). AE annual cap (5,000,000 DZD) is the only real number.
+- **Fonts**: Google Fonts `<link>` (no answer was given on self-hosting).
+- **Dev tools**: `?dev=1` QA panel and a test outbox on `/status`; not product features.
+- **Not built**: real e-mail, auth for the admin, real file preview (mock shows metadata), per-transaction enforcement of limits and of the AE category rule (UI only shows/checks them), `AE_ALLOW_PHYSICAL_GOODS_ONLINE` enforcement (notice only).
+- **Verification**: 230+ automated tests (unit, API, UI flows, contrast). The four signup flows, the Arabic RTL layout and the 390 px layout were also checked in a real browser with a throwaway Playwright script kept outside the repo.
+- **Known rough edges**: about 18 non-blocking oxlint warnings (state set in effects, fast-refresh export rule), a single ~500 kB JS chunk (no route splitting yet), Arabic copy is a first pass.
 
 ## 1. What exists today
 
@@ -134,6 +155,16 @@ Admin: list (tabs KYC L2 / L3 / Incomplete drafts, Partner-type filter, shows la
 - **Compliance wording** (AE cap, `.com.dz`, AML) is quoted from the story, not legally reviewed.
 
 ## 10. Handoff list (lives outside this repo / not built here)
+
+Added while building (contracts the real backend must honour; `src/api/types.ts` is the interface, `src/api/mock/api.ts` is the executable spec):
+- Recompute OTP-verified flags server-side; refuse `createAccount`/`saveStep(account)` for unverified contacts.
+- Re-run the shared schema + duplicate checks on save, submit and resubmit; field errors keyed `field` (save) or `step.field` (submit/resubmit); duplicate code `duplicate.<field>`.
+- Resubmit may change only flagged `step.field` items.
+- Upgrade drafts, upgrade approval/rejection and their admin rows; volume updates must go to admin re-review before limits change.
+- Enterprise: approve keeps the live key inactive until "contract signed".
+- Notification templates: submitted, approved, rejected (with reason), contract signed, AE 80 %, AE 100 %, volume above band, upgrade approved.
+- AE category restriction must be enforced where payment links/invoices are created.
+- Admin identity for the audit log (the mock uses a fixed actor).
 
 - Real backend: merchant/KYB models and migrations (`DRAFT`, new fields), draft/save, submit/resubmit, status, ANAE search, duplicate checks against real partners, server-side schema validation (share `src/shared/` or port it).
 - Account creation with real OTP (email/SMS) and sandbox/live API-key issuance and activation (and whether the platform has sandbox environments at all: unknown, flag for backend team).
