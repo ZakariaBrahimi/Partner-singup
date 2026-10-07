@@ -51,3 +51,29 @@ describe('i18n', () => {
     expect(missing).toEqual([])
   })
 })
+
+describe('i18n – keys used in source code', () => {
+  it('every static t("…") key exists in en/fr/ar', async () => {
+    const { readdirSync, readFileSync, statSync } = await import('node:fs')
+    const { join } = await import('node:path')
+    const walk = (d: string): string[] =>
+      readdirSync(d).flatMap((f) => {
+        const p = join(d, f)
+        return statSync(p).isDirectory() ? walk(p) : /\.(ts|tsx)$/.test(f) ? [p] : []
+      })
+    const files = walk(join(process.cwd(), 'src'))
+    const keys = new Set<string>()
+    for (const f of files) {
+      const src = readFileSync(f, 'utf8')
+      for (const m of src.matchAll(/\bt\(\s*'([A-Za-z0-9_]+(?:\.[A-Za-z0-9_]+)+)'/g)) keys.add(m[1])
+      for (const m of src.matchAll(/\?\s*'(ui\.[A-Za-z0-9_.]+)'\s*:\s*'(ui\.[A-Za-z0-9_.]+)'/g)) {
+        keys.add(m[1])
+        keys.add(m[2])
+      }
+    }
+    expect(keys.size).toBeGreaterThan(50)
+    for (const [name, l] of [['en', en], ['fr', fr], ['ar', ar]] as const) {
+      expect([...keys].filter((k) => get(l, k) === undefined), name).toEqual([])
+    }
+  })
+})

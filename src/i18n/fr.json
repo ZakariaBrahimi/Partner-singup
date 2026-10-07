@@ -37,11 +37,13 @@
   "steps": {
     "type": {
       "title": "Choisissez votre type de partenaire",
-      "intro": "Votre statut juridique détermine le formulaire à remplir."
+      "intro": "Votre statut juridique détermine le formulaire à remplir.",
+      "nav": "Type de partenaire"
     },
     "account": {
       "title": "Compte et représentant légal",
-      "intro": "Créez votre compte et vérifiez votre identité."
+      "intro": "Créez votre compte et vérifiez votre identité.",
+      "nav": "Compte"
     },
     "business": {
       "title": "Informations sur l’activité",
@@ -57,19 +59,23 @@
       },
       "ENTERPRISE": {
         "title": "Informations sur la société"
-      }
+      },
+      "nav": "Activité"
     },
     "settlement": {
       "title": "Compte de règlement et volume attendu",
-      "intro": "Où nous vous versons les fonds et le volume attendu."
+      "intro": "Où nous vous versons les fonds et le volume attendu.",
+      "nav": "Règlement"
     },
     "enterpriseDocs": {
       "title": "Documents Entreprise",
-      "intro": "Documents supplémentaires requis pour les partenaires Entreprise."
+      "intro": "Documents supplémentaires requis pour les partenaires Entreprise.",
+      "nav": "Documents Entreprise"
     },
     "review": {
       "title": "Vérifier et soumettre",
-      "intro": "Vérifiez tout avant de soumettre."
+      "intro": "Vérifiez tout avant de soumettre.",
+      "nav": "Vérification"
     }
   },
   "sections": {
@@ -331,7 +337,10 @@
     "fileTooLarge": "Le fichier dépasse 5 Mo.",
     "fileType": "Seuls les fichiers JPG, PNG ou PDF sont acceptés.",
     "uploadFailed": "Échec du téléversement. Réessayez.",
-    "network": "Un problème est survenu. Réessayez."
+    "network": "Un problème est survenu. Réessayez.",
+    "invalidCredentials": "E-mail ou mot de passe incorrect.",
+    "otpInvalid": "Ce code est incorrect. Vérifiez-le et réessayez.",
+    "notFlagged": "Cet élément n’a pas été signalé et ne peut pas être modifié."
   },
   "duplicate": {
     "rc": "Ce RC est déjà enregistré.",
@@ -374,5 +383,241 @@
     "SETTLEMENT_ACCOUNT_MISMATCH": "Compte de règlement non conforme au partenaire",
     "BENEFICIAL_OWNERS_INCOMPLETE": "Bénéficiaires effectifs incomplets",
     "OTHER": "Autre"
+  },
+  "categories": {
+    "SERVICES_PROFESSIONAL": "Services professionnels",
+    "SERVICES_DIGITAL": "Services numériques",
+    "EDUCATION": "Éducation et soutien scolaire",
+    "CRAFT": "Artisanat",
+    "FOOD": "Alimentation",
+    "TRANSPORT": "Transport"
+  },
+  "ui": {
+    "close": "Fermer",
+    "cancel": "Annuler",
+    "back": "Retour",
+    "continue": "Continuer",
+    "continueAs": "Continuer en tant que {{type}}",
+    "edit": "Modifier",
+    "yes": "Oui",
+    "no": "Non",
+    "choose": "Choisir…",
+    "loading": "Chargement…",
+    "saving": "Enregistrement…",
+    "checking": "Vérification…",
+    "available": "Disponible",
+    "language": "Langue",
+    "logout": "Se déconnecter",
+    "progress": "Progression de l’inscription",
+    "progressSaved": "Votre progression est enregistrée après chaque étape.",
+    "stepOf": "Étape {{n}} sur {{m}}",
+    "errorSummaryTitle": "Il y a un problème ({{count}})",
+    "band": {
+      "range": "{{min}} – {{max}} DZD / mois",
+      "open": "{{min}} DZD / mois et plus"
+    },
+    "routed": {
+      "note": "Votre volume déclaré oriente cette demande vers Entreprise. Une étape de documents Entreprise est ajoutée et un contrat signé est requis avant la mise en production."
+    },
+    "type": {
+      "selected": "Sélectionné",
+      "youllNeed": "Vous aurez besoin de :",
+      "help": "Besoin d’aide ?",
+      "helpMe": "Aidez-moi à choisir",
+      "noBusiness": "Pas encore d’activité enregistrée ?",
+      "alreadyPartner": "Déjà partenaire ?",
+      "suggested": "D’après vos réponses, nous vous suggérons « {{type}} ». Vous pouvez encore changer.",
+      "changeTitle": "Changer de type de partenaire ?",
+      "changeBody": "Votre compte, votre identité et vos informations de règlement sont conservés. {{count}} valeur(s) propre(s) à l’ancien type seront réinitialisée(s).",
+      "changeConfirm": "Changer de type"
+    },
+    "login": {
+      "title": "Connexion",
+      "intro": "Reprenez votre inscription ou suivez votre dossier.",
+      "cta": "Se connecter",
+      "newPartner": "Nouveau partenaire ? Inscrivez-vous",
+      "demoTitle": "Données de test",
+      "demoBody": "Cette version utilise un backend fictif. Cliquez sur un compte pour remplir le formulaire. Mot de passe : {{password}}"
+    },
+    "helper": {
+      "title": "Aidez-moi à choisir",
+      "intro": "Répondez à trois questions rapides au maximum.",
+      "progress": "Question {{n}} sur {{m}}",
+      "q": {
+        "rc": "Avez-vous un RC (registre de commerce) ?",
+        "ram": "Avez-vous une carte d’artisan (RAM) ?",
+        "anae": "Avez-vous une carte auto-entrepreneur ANAE ?"
+      },
+      "hint": {
+        "rc": "Si votre activité est une société (EURL, SARL…), vous pourrez choisir Entreprise à l’écran suivant.",
+        "ram": "La carte d’artisan est délivrée par la Chambre de l’artisanat.",
+        "anae": "La carte est délivrée par l’ANAE (Agence nationale de l’auto-entrepreneur)."
+      }
+    },
+    "noStatus": {
+      "title": "Un statut juridique est requis",
+      "intro": "Vous ne pouvez pas poursuivre l’inscription Partenaire sans statut.",
+      "reason": "Pour accepter des paiements professionnels, vous devez être enregistré comme auto-entrepreneur, artisan, commerçant ou société.",
+      "appTitle": "Utilisez l’application Mizaniya Pay",
+      "appBody": "En tant que particulier, vous pouvez envoyer et recevoir de l’argent avec l’application client.",
+      "appCta": "Obtenir l’application",
+      "anaeTitle": "Obtenir une carte auto-entrepreneur",
+      "anaeBody": "La carte ANAE est le moyen le plus simple de démarrer une activité enregistrée.",
+      "anaeCta": "Visiter anae.dz"
+    },
+    "upload": {
+      "choose": "Choisir un fichier",
+      "takeSelfie": "Prendre un selfie",
+      "rules": "JPG, PNG ou PDF, 5 Mo max",
+      "uploading": "Téléversement de {{name}}…",
+      "progress": "Progression du téléversement",
+      "replace": "Remplacer",
+      "retry": "Réessayer",
+      "rulesImg": "JPG ou PNG, 5 Mo max",
+      "rulesPdf": "PDF, 5 Mo max"
+    },
+    "selfie": {
+      "title": "Prendre un selfie",
+      "hint": "Regardez la caméra avec un bon éclairage. Votre visage doit être bien visible.",
+      "preview": "Aperçu de la caméra",
+      "capture": "Capturer",
+      "unavailable": "La caméra n’est pas disponible. Choisissez plutôt une photo."
+    },
+    "otp": {
+      "send": "Envoyer le code",
+      "resend": "Renvoyer",
+      "verify": "Vérifier",
+      "verified": "Vérifié",
+      "enter": "Saisissez le code à 6 chiffres envoyé à {{target}}",
+      "yourEmail": "votre e-mail",
+      "yourPhone": "votre téléphone"
+    },
+    "pw": {
+      "label": "Robustesse",
+      "level0": "Saisissez un mot de passe",
+      "level1": "Faible",
+      "level2": "Moyenne",
+      "level3": "Bonne",
+      "level4": "Forte",
+      "show": "Afficher le mot de passe",
+      "hide": "Masquer le mot de passe"
+    },
+    "account": {
+      "created": "Votre compte est créé et vos clés API sandbox sont prêtes. Votre progression est enregistrée."
+    },
+    "activity": {
+      "placeholder": "Rechercher par code ou nom",
+      "results": "Activités",
+      "none": "Aucune activité correspondante",
+      "remove": "Retirer l’activité",
+      "canAccept": "Ce que vous pourrez accepter"
+    },
+    "owners": {
+      "threshold": "Les bénéficiaires détenant {{pct}} % ou plus doivent fournir une pièce d’identité.",
+      "ownerN": "Bénéficiaire {{n}}",
+      "pct": "Détention %",
+      "idDoc": "Pièce d’identité",
+      "idVerified": "Identité vérifiée",
+      "idMissing": "Identité manquante",
+      "add": "Ajouter un bénéficiaire",
+      "remove": "Retirer le bénéficiaire {{n}}"
+    },
+    "aml": {
+      "status": {
+        "NOT_STARTED": "Non commencé",
+        "IN_PROGRESS": "En cours",
+        "DONE": "Terminé"
+      },
+      "start": "Commencer le questionnaire",
+      "continue": "Modifier les réponses",
+      "save": "Enregistrer les réponses",
+      "intro": "Répondez à toutes les questions pour terminer. Vous pouvez enregistrer et revenir.",
+      "q": {
+        "pep": "Un bénéficiaire ou dirigeant est-il une personne politiquement exposée ?",
+        "sanctions": "La société ou un bénéficiaire fait-il l’objet de sanctions internationales ?",
+        "highRiskJurisdictions": "Effectuez-vous des opérations avec des juridictions à haut risque ?",
+        "cashIntensive": "Votre activité génère-t-elle beaucoup d’espèces ?",
+        "thirdParties": "Recevez-vous des paiements pour le compte de tiers ?"
+      }
+    },
+    "settlement": {
+      "mismatchPerson": "Le nom du titulaire ne correspond pas à votre nom sur la pièce d’identité. Vérifiez-le, sinon votre demande pourrait être rejetée.",
+      "mismatchCompany": "Le nom du titulaire ne correspond pas à la raison sociale. Les comptes Société et Entreprise doivent être au nom de la société.",
+      "enterpriseNote": "Ce volume vous qualifie comme partenaire Entreprise. Nous ajouterons une étape de documents Entreprise et un contrat signé est requis avant la mise en production."
+    },
+    "review": {
+      "type": "Type de partenaire",
+      "documents": "Documents",
+      "uploaded": "Téléversé",
+      "missing": "Manquant",
+      "declarations": "Déclarations",
+      "submit": "Soumettre la demande",
+      "submitting": "Envoi en cours…"
+    },
+    "submitted": {
+      "badge": "Demande soumise",
+      "title": "Merci, nous avons reçu votre demande",
+      "intro": "Notre équipe examine les demandes sous environ {{hours}} heures.",
+      "next": "Prochaines étapes",
+      "n1": "Nous examinons vos documents et informations.",
+      "n2": "Vous recevez un e-mail avec la décision. S’il manque quelque chose, vous verrez précisément quoi corriger.",
+      "n3": "Une fois approuvé, vos clés API de production sont activées et vous pouvez commencer à accepter des paiements.",
+      "contract": "Les partenaires Entreprise doivent aussi signer un contrat avant la mise en production.",
+      "track": "Suivre ma demande"
+    },
+    "status": {
+      "title": "Statut de la demande",
+      "state": {
+        "DRAFT": "Brouillon",
+        "PENDING_APPROVAL": "En cours d’examen",
+        "APPROVED": "Approuvé",
+        "REJECTED": "Rejeté"
+      },
+      "kyc": "Niveau KYC {{level}}",
+      "timeline": "Chronologie de la demande",
+      "step": {
+        "SUBMITTED": "Soumise",
+        "IN_REVIEW": "En examen",
+        "APPROVED": "Approuvée",
+        "REJECTED": "Rejetée"
+      },
+      "pending": "Votre demande est en cours d’examen. Cela prend en général environ {{hours}} heures.",
+      "rejectedTitle": "Votre demande nécessite des corrections",
+      "reason": "Motif",
+      "message": "Message de notre équipe",
+      "flagged": "Veuillez corriger ces éléments",
+      "fix": "Corriger et soumettre à nouveau",
+      "contractPending": "Signature du contrat en attente",
+      "contractPendingBody": "Votre compte est approuvé. La mise en production reste bloquée jusqu’à ce que notre équipe marque votre contrat comme signé.",
+      "contractSigned": "Votre contrat est signé. Vous pouvez passer en production.",
+      "limits": "Vos plafonds",
+      "limit": {
+        "perTransaction": "Par transaction",
+        "monthly": "Par mois",
+        "payout": "Versement",
+        "annual": "Par an (plafond légal)"
+      },
+      "byContract": "Selon contrat",
+      "limitsNote": "Les plafonds dépendent de votre type de partenaire et du volume déclaré.",
+      "products": "Ce que vous pouvez utiliser",
+      "keys": "Clés API",
+      "env": {
+        "SANDBOX": "Sandbox",
+        "LIVE": "Production"
+      },
+      "keyStatus": {
+        "ACTIVE": "Active",
+        "INACTIVE": "Inactive"
+      },
+      "copyKey": "Copier la clé",
+      "liveBlocked": "Votre clé de production s’active à la signature du contrat."
+    },
+    "fix": {
+      "title": "Corriger et soumettre à nouveau",
+      "intro": "Seuls les éléments signalés par notre équipe sont ouverts. Tout le reste est conservé tel que saisi.",
+      "itemsTitle": "Éléments à corriger ({{count}})",
+      "nothingFlagged": "Aucun élément précis n’a été signalé. Vous pouvez soumettre à nouveau votre demande telle quelle.",
+      "resubmit": "Soumettre à nouveau"
+    }
   }
 }

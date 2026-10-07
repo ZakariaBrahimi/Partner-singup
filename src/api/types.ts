@@ -83,6 +83,8 @@ export interface PartnerSummary {
   /** After routing rules (Company above the volume threshold -> Enterprise). */
   effectiveType: PartnerType | null
   routedToEnterprise: boolean
+  /** The draft being edited is an upgrade of an approved account. */
+  isUpgrade: boolean
   kycLevel: KycLevel | null
   lastCompletedStep: StepId | null
   email: string

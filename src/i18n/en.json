@@ -37,11 +37,13 @@
   "steps": {
     "type": {
       "title": "Choose your partner type",
-      "intro": "Your legal status decides which form you fill."
+      "intro": "Your legal status decides which form you fill.",
+      "nav": "Partner type"
     },
     "account": {
       "title": "Account & legal representative",
-      "intro": "Create your account and verify who you are."
+      "intro": "Create your account and verify who you are.",
+      "nav": "Account"
     },
     "business": {
       "title": "Business details",
@@ -57,19 +59,23 @@
       },
       "ENTERPRISE": {
         "title": "Company details"
-      }
+      },
+      "nav": "Business"
     },
     "settlement": {
       "title": "Settlement account & expected volume",
-      "intro": "Where we pay you, and how much you expect to process."
+      "intro": "Where we pay you, and how much you expect to process.",
+      "nav": "Settlement"
     },
     "enterpriseDocs": {
       "title": "Enterprise documents",
-      "intro": "Additional documents required for Enterprise partners."
+      "intro": "Additional documents required for Enterprise partners.",
+      "nav": "Enterprise documents"
     },
     "review": {
       "title": "Review & submit",
-      "intro": "Check everything before you submit."
+      "intro": "Check everything before you submit.",
+      "nav": "Review"
     }
   },
   "sections": {
@@ -331,7 +337,10 @@
     "fileTooLarge": "File is larger than 5 MB.",
     "fileType": "Only JPG, PNG or PDF files are accepted.",
     "uploadFailed": "Upload failed. Try again.",
-    "network": "Something went wrong. Try again."
+    "network": "Something went wrong. Try again.",
+    "invalidCredentials": "Email or password is incorrect.",
+    "otpInvalid": "This code is not correct. Check it and try again.",
+    "notFlagged": "This item was not flagged and cannot be changed."
   },
   "duplicate": {
     "rc": "This RC is already registered.",
@@ -374,5 +383,241 @@
     "SETTLEMENT_ACCOUNT_MISMATCH": "Settlement account does not match the partner",
     "BENEFICIAL_OWNERS_INCOMPLETE": "Beneficial owners incomplete",
     "OTHER": "Other"
+  },
+  "categories": {
+    "SERVICES_PROFESSIONAL": "Professional services",
+    "SERVICES_DIGITAL": "Digital services",
+    "EDUCATION": "Education & tutoring",
+    "CRAFT": "Crafts",
+    "FOOD": "Food",
+    "TRANSPORT": "Transport"
+  },
+  "ui": {
+    "close": "Close",
+    "cancel": "Cancel",
+    "back": "Back",
+    "continue": "Continue",
+    "continueAs": "Continue as {{type}}",
+    "edit": "Edit",
+    "yes": "Yes",
+    "no": "No",
+    "choose": "Choose…",
+    "loading": "Loading…",
+    "saving": "Saving…",
+    "checking": "Checking…",
+    "available": "Available",
+    "language": "Language",
+    "logout": "Log out",
+    "progress": "Signup progress",
+    "progressSaved": "Your progress is saved after every step.",
+    "stepOf": "Step {{n}} of {{m}}",
+    "errorSummaryTitle": "There is a problem ({{count}})",
+    "band": {
+      "range": "{{min}} – {{max}} DZD / month",
+      "open": "{{min}} DZD / month and above"
+    },
+    "routed": {
+      "note": "Your declared volume routes this application to Enterprise. An Enterprise documents step is added and a signed contract is required before you go live."
+    },
+    "type": {
+      "selected": "Selected",
+      "youllNeed": "You’ll need:",
+      "help": "Need help?",
+      "helpMe": "Help me choose",
+      "noBusiness": "No registered business yet?",
+      "alreadyPartner": "Already a partner?",
+      "suggested": "Based on your answers we suggested “{{type}}”. You can still change it.",
+      "changeTitle": "Change partner type?",
+      "changeBody": "Your account, identity and settlement details are kept. {{count}} value(s) specific to the previous type will be reset.",
+      "changeConfirm": "Change type"
+    },
+    "login": {
+      "title": "Log in",
+      "intro": "Resume your signup or follow your application.",
+      "cta": "Log in",
+      "newPartner": "New partner? Sign up",
+      "demoTitle": "Test data",
+      "demoBody": "This build uses a mock backend. Click an account to fill the form. Password: {{password}}"
+    },
+    "helper": {
+      "title": "Help me choose",
+      "intro": "Answer up to three quick questions.",
+      "progress": "Question {{n}} of {{m}}",
+      "q": {
+        "rc": "Do you have an RC (registre de commerce)?",
+        "ram": "Do you have an artisan (RAM) card?",
+        "anae": "Do you have an ANAE auto-entrepreneur card?"
+      },
+      "hint": {
+        "rc": "If your business is a company (EURL, SARL…), you can switch to Company on the next screen.",
+        "ram": "The artisan card is issued by the Chamber of Crafts.",
+        "anae": "The card is issued by ANAE (Agence nationale de l’auto-entrepreneur)."
+      }
+    },
+    "noStatus": {
+      "title": "A legal status is required",
+      "intro": "You can’t continue the Partner signup without one.",
+      "reason": "To accept payments for a business you must be registered as an auto-entrepreneur, an artisan, a trader or a company.",
+      "appTitle": "Use the Mizaniya Pay app",
+      "appBody": "As an individual you can send and receive money with the customer app.",
+      "appCta": "Get the app",
+      "anaeTitle": "Get an auto-entrepreneur card",
+      "anaeBody": "The ANAE card is the simplest way to start a registered activity.",
+      "anaeCta": "Visit anae.dz"
+    },
+    "upload": {
+      "choose": "Choose file",
+      "takeSelfie": "Take a selfie",
+      "rules": "JPG, PNG or PDF, up to 5 MB",
+      "uploading": "Uploading {{name}}…",
+      "progress": "Upload progress",
+      "replace": "Replace",
+      "retry": "Retry",
+      "rulesImg": "JPG or PNG, up to 5 MB",
+      "rulesPdf": "PDF, up to 5 MB"
+    },
+    "selfie": {
+      "title": "Take a selfie",
+      "hint": "Look at the camera in good light. Your face must be clearly visible.",
+      "preview": "Camera preview",
+      "capture": "Capture",
+      "unavailable": "The camera is not available. Choose a photo instead."
+    },
+    "otp": {
+      "send": "Send code",
+      "resend": "Resend",
+      "verify": "Verify",
+      "verified": "Verified",
+      "enter": "Enter the 6-digit code sent to {{target}}",
+      "yourEmail": "your email",
+      "yourPhone": "your phone"
+    },
+    "pw": {
+      "label": "Strength",
+      "level0": "Enter a password",
+      "level1": "Weak",
+      "level2": "Fair",
+      "level3": "Good",
+      "level4": "Strong",
+      "show": "Show password",
+      "hide": "Hide password"
+    },
+    "account": {
+      "created": "Your account was created and sandbox API keys are ready. Your progress is saved."
+    },
+    "activity": {
+      "placeholder": "Search by code or name",
+      "results": "Activities",
+      "none": "No matching activity",
+      "remove": "Remove activity",
+      "canAccept": "What you’ll be able to accept"
+    },
+    "owners": {
+      "threshold": "Owners holding {{pct}}% or more must provide an ID document.",
+      "ownerN": "Owner {{n}}",
+      "pct": "Ownership %",
+      "idDoc": "ID document",
+      "idVerified": "ID verified",
+      "idMissing": "ID missing",
+      "add": "Add owner",
+      "remove": "Remove owner {{n}}"
+    },
+    "aml": {
+      "status": {
+        "NOT_STARTED": "Not started",
+        "IN_PROGRESS": "In progress",
+        "DONE": "Done"
+      },
+      "start": "Start questionnaire",
+      "continue": "Edit answers",
+      "save": "Save answers",
+      "intro": "Answer every question to complete the questionnaire. You can save and come back.",
+      "q": {
+        "pep": "Is any owner or manager a politically exposed person?",
+        "sanctions": "Is the company or an owner subject to international sanctions?",
+        "highRiskJurisdictions": "Do you transact with high-risk jurisdictions?",
+        "cashIntensive": "Is your activity cash-intensive?",
+        "thirdParties": "Do you receive payments on behalf of third parties?"
+      }
+    },
+    "settlement": {
+      "mismatchPerson": "The account holder name does not match your name on the ID. Check it, or your application may be rejected.",
+      "mismatchCompany": "The account holder name does not match the company name. Company and Enterprise must use an account in the company’s name.",
+      "enterpriseNote": "This volume qualifies you as an Enterprise partner. We will add an Enterprise documents step, and a signed contract is required before you go live."
+    },
+    "review": {
+      "type": "Partner type",
+      "documents": "Documents",
+      "uploaded": "Uploaded",
+      "missing": "Missing",
+      "declarations": "Declarations",
+      "submit": "Submit application",
+      "submitting": "Submitting…"
+    },
+    "submitted": {
+      "badge": "Application submitted",
+      "title": "Thank you, we received your application",
+      "intro": "Our team reviews applications within about {{hours}} hours.",
+      "next": "What happens next",
+      "n1": "We review your documents and details.",
+      "n2": "You get an email with the decision. If something is missing, you will see exactly what to fix.",
+      "n3": "When approved, your live API keys are activated and you can start accepting payments.",
+      "contract": "Enterprise partners must also sign a contract before going live.",
+      "track": "Track my application"
+    },
+    "status": {
+      "title": "Application status",
+      "state": {
+        "DRAFT": "Draft",
+        "PENDING_APPROVAL": "Under review",
+        "APPROVED": "Approved",
+        "REJECTED": "Rejected"
+      },
+      "kyc": "KYC level {{level}}",
+      "timeline": "Application timeline",
+      "step": {
+        "SUBMITTED": "Submitted",
+        "IN_REVIEW": "In review",
+        "APPROVED": "Approved",
+        "REJECTED": "Rejected"
+      },
+      "pending": "Your application is being reviewed. This usually takes about {{hours}} hours.",
+      "rejectedTitle": "Your application needs changes",
+      "reason": "Reason",
+      "message": "Message from our team",
+      "flagged": "Please fix these items",
+      "fix": "Fix and resubmit",
+      "contractPending": "Contract signature pending",
+      "contractPendingBody": "Your account is approved. Go-live stays blocked until our team marks your contract as signed.",
+      "contractSigned": "Your contract is signed. You can go live.",
+      "limits": "Your limits",
+      "limit": {
+        "perTransaction": "Per transaction",
+        "monthly": "Per month",
+        "payout": "Payout",
+        "annual": "Per year (legal cap)"
+      },
+      "byContract": "By contract",
+      "limitsNote": "Limits depend on your partner type and declared volume.",
+      "products": "What you can use",
+      "keys": "API keys",
+      "env": {
+        "SANDBOX": "Sandbox",
+        "LIVE": "Live"
+      },
+      "keyStatus": {
+        "ACTIVE": "Active",
+        "INACTIVE": "Inactive"
+      },
+      "copyKey": "Copy key",
+      "liveBlocked": "Your live key activates when the contract is signed."
+    },
+    "fix": {
+      "title": "Fix and resubmit",
+      "intro": "Only the items our team flagged are open. Everything else is kept as you entered it.",
+      "itemsTitle": "Items to fix ({{count}})",
+      "nothingFlagged": "No specific item was flagged. You can resubmit your application as it is.",
+      "resubmit": "Resubmit application"
+    }
   }
 }

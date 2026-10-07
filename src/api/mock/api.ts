@@ -126,6 +126,7 @@ function summary(p: PartnerRecord): PartnerSummary {
     partnerType: d.partnerType,
     effectiveType: eff,
     routedToEnterprise: !!eff && eff !== d.partnerType,
+    isUpgrade: false,
     kycLevel: p.kycLevel,
     lastCompletedStep: d.lastCompletedStep,
     email: String(d.steps.account?.email ?? ''),
@@ -144,6 +145,7 @@ function subjectSummary(p: PartnerRecord): PartnerSummary {
     partnerType: s.draft.partnerType,
     effectiveType: eff,
     routedToEnterprise: !!eff && eff !== s.draft.partnerType,
+    isUpgrade: true,
     lastCompletedStep: s.draft.lastCompletedStep,
   }
 }
@@ -166,11 +168,18 @@ function duplicateErrors(draft: PartnerDraft, exceptId: string | null, onlyStep?
   return errs
 }
 
-function withServerVerification(data: StepData): StepData {
+/** The server decides what is verified: an OTP it verified, or an unchanged value it already verified. */
+function withServerVerification(data: StepData, previous?: StepData): StepData {
   const v = db().verified
   const email = typeof data.email === 'string' ? canonicalValue('email', data.email) : ''
   const phone = typeof data.phone === 'string' ? canonicalValue('phone', data.phone) : ''
-  return { ...data, emailVerified: v.includes(`EMAIL:${email}`), phoneVerified: v.includes(`PHONE:${phone}`) }
+  const unchanged = (field: 'email' | 'phone', flag: 'emailVerified' | 'phoneVerified', cur: string) =>
+    previous?.[flag] === true && typeof previous[field] === 'string' && canonicalValue(field, previous[field] as string) === cur
+  return {
+    ...data,
+    emailVerified: v.includes(`EMAIL:${email}`) || unchanged('email', 'emailVerified', email),
+    phoneVerified: v.includes(`PHONE:${phone}`) || unchanged('phone', 'phoneVerified', phone),
+  }
 }
 
 const stepIndex = (draft: PartnerDraft, id: StepId) =>
@@ -400,7 +409,7 @@ export const mockApi: PartnerApi = {
       const draft = clone(s.draft)
       if (!hasPartnerType(draft.partnerType)) return fail('INVALID_STATE')
       if (stepIndex(draft, stepId) < 1) return fail('NOT_FOUND')
-      const stepData = stepId === 'account' ? withServerVerification({ ...data, password: data.password ?? draft.steps.account?.password }) : data
+      const stepData = stepId === 'account' ? withServerVerification({ ...data, password: data.password ?? draft.steps.account?.password }, s.draft.steps.account) : data
       draft.steps[stepId] = stepData
       if (complete) {
         const errors = {
@@ -510,7 +519,7 @@ export const mockApi: PartnerApi = {
       }
       if (Object.keys(notFlagged).length) return fail('NOT_FLAGGED', { fieldErrors: notFlagged })
       if (draft.steps.account) {
-        draft.steps.account = withServerVerification(draft.steps.account)
+        draft.steps.account = withServerVerification(draft.steps.account, s.draft.steps.account)
       }
       const errors = { ...validateSubmission(draft), ...duplicateErrors(draft, p.id) }
       if (Object.keys(errors).length) return fail('VALIDATION', { fieldErrors: errors })

@@ -172,6 +172,7 @@ registerPartnerType({
   upgradeTargets: ['INDIVIDUAL_TRADER', 'COMPANY'],
   helperMatch: 'anae',
   annualCapDzd: AE_ANNUAL_CAP_DZD,
+  activityRestricted: true,
 })
 
 registerPartnerType({

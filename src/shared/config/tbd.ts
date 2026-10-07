@@ -73,3 +73,7 @@ export const LIMITS: Record<PartnerType, Record<string, Limits>> = {
     VOLUME_BANDS.map((b) => [b.id, { perTransaction: null, monthly: null, payout: null }]),
   ),
 }
+
+// TODO(compliance): the real AML/CFT questionnaire (Regulation 24-03 as amended by 25-14). Placeholder questions.
+export const AML_QUESTION_KEYS = ['pep', 'sanctions', 'highRiskJurisdictions', 'cashIntensive', 'thirdParties'] as const
+export type AmlStatus = 'NOT_STARTED' | 'IN_PROGRESS' | 'DONE'

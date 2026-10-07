@@ -90,6 +90,8 @@ export interface PartnerTypeConfig {
   requiresContract?: boolean
   /** Helper (step 1) answers that preselect this type, in priority order across types. */
   helperMatch?: 'rc' | 'ram' | 'anae'
+  /** Payment links/invoices are limited to the categories mapped to the ANAE activity code. */
+  activityRestricted?: boolean
   /** Annual turnover cap (DZD) when set; enables cap tracking. */
   annualCapDzd?: number
 }
