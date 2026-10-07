@@ -340,7 +340,8 @@
     "network": "Un problème est survenu. Réessayez.",
     "invalidCredentials": "E-mail ou mot de passe incorrect.",
     "otpInvalid": "Ce code est incorrect. Vérifiez-le et réessayez.",
-    "notFlagged": "Cet élément n’a pas été signalé et ne peut pas être modifié."
+    "notFlagged": "Cet élément n’a pas été signalé et ne peut pas être modifié.",
+    "invalidState": "Cette action n’est plus disponible pour cette soumission."
   },
   "duplicate": {
     "rc": "Ce RC est déjà enregistré.",
@@ -618,6 +619,88 @@
       "itemsTitle": "Éléments à corriger ({{count}})",
       "nothingFlagged": "Aucun élément précis n’a été signalé. Vous pouvez soumettre à nouveau votre demande telle quelle.",
       "resubmit": "Soumettre à nouveau"
+    }
+  },
+  "admin": {
+    "badge": "Admin",
+    "list": {
+      "title": "Demandes d’inscription marchands",
+      "intro": "Soumissions des partenaires par niveau KYC, et inscriptions non terminées.",
+      "tab": {
+        "L2": "KYC niveau 2",
+        "L3": "KYC niveau 3",
+        "DRAFTS": "Inscriptions incomplètes"
+      },
+      "filterType": "Type de partenaire",
+      "filterStatus": "Statut",
+      "all": "Tous",
+      "empty": "Aucune soumission correspondante.",
+      "upgrade": "Évolution",
+      "col": {
+        "partner": "Partenaire",
+        "type": "Type",
+        "status": "Statut",
+        "band": "Volume déclaré",
+        "submitted": "Soumis le",
+        "lastStep": "Dernière étape terminée",
+        "email": "E-mail"
+      }
+    },
+    "flag": {
+      "AE_CAP_80": "Plafond AE 80 %",
+      "AE_CAP_100": "Plafond AE atteint",
+      "VOLUME_ABOVE_BAND": "Volume au-dessus de la tranche"
+    },
+    "detail": {
+      "back": "Retour aux demandes",
+      "notFound": "Cette soumission est introuvable.",
+      "upgradeFrom": "Évolution depuis {{from}}",
+      "routed": "Orienté vers Entreprise selon le volume",
+      "draftNote": "Inscription incomplète. Dernière étape terminée : {{step}}. Les actions de revue sont disponibles après soumission.",
+      "rejected": "Rejeté",
+      "noActions": "Aucune action de revue disponible pour ce statut.",
+      "declared": "Activité déclarée",
+      "aeUsage": "Chiffre d’affaires annuel vs plafond",
+      "monthlyVolume": "Volume mensuel actuel",
+      "checklist": "Liste de contrôle – {{type}}",
+      "checklistProgress": "{{done}} contrôles sur {{total}} effectués",
+      "contractSigned": "Contrat signé le {{date}} par {{by}}. La mise en production est autorisée.",
+      "contractPending": "Signature du contrat en attente. La mise en production reste bloquée jusqu’à signature.",
+      "documents": "Documents",
+      "preview": "Aperçu",
+      "docMissing": "Aucun fichier téléversé.",
+      "previewAlt": "Aperçu de {{name}}",
+      "previewMock": "Aperçu fictif (les fichiers ne sont pas stockés dans cette version)",
+      "audit": "Journal d’audit",
+      "auditEmpty": "Aucune action enregistrée."
+    },
+    "approve": {
+      "cta": "Approuver",
+      "title": "Approuver cette soumission ?",
+      "body": "Le marchand et le KYB passent à APPROVED, le partenaire est placé au niveau KYC {{level}}, les plafonds du type et de la tranche sont appliqués et le partenaire est notifié.",
+      "checklistWarn": "Seulement {{done}} contrôles sur {{total}} sont cochés.",
+      "contractNote": "Entreprise : la clé API de production reste inactive jusqu’à ce que vous marquiez le contrat comme signé.",
+      "confirm": "Approuver",
+      "done": "Soumission approuvée. Le partenaire a été notifié."
+    },
+    "reject": {
+      "cta": "Rejeter",
+      "title": "Rejeter cette soumission",
+      "body": "Le partenaire voit le motif dans le portail et le reçoit par e-mail.",
+      "reason": "Motif",
+      "text": "Message au partenaire",
+      "textHint": "Expliquez ce qui ne va pas et comment corriger.",
+      "flagged": "Signaler des champs et documents (facultatif)",
+      "flaggedHint": "Seuls les éléments signalés sont rouverts lors du nouvel envoi.",
+      "confirm": "Rejeter et notifier",
+      "done": "Soumission rejetée. Le partenaire a été notifié par e-mail."
+    },
+    "contract": {
+      "cta": "Marquer le contrat comme signé",
+      "title": "Marquer le contrat comme signé ?",
+      "body": "Cela active les clés API de production et débloque la mise en production. La signature électronique du contrat se fait hors de la plateforme.",
+      "confirm": "Marquer comme signé",
+      "done": "Contrat marqué comme signé. Les clés de production sont actives."
     }
   }
 }

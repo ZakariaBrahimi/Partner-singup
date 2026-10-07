@@ -1,4 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
+import { SubmissionDetail } from '@/admin/SubmissionDetail'
+import { SubmissionsList } from '@/admin/SubmissionsList'
 import { FixResubmit } from '@/portal/FixResubmit'
 import { Helper } from '@/portal/Helper'
 import { Login } from '@/portal/Login'
@@ -22,6 +24,8 @@ export function AppRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/status" element={<StatusPage />} />
         <Route path="/status/fix" element={<FixResubmit />} />
+        <Route path="/admin" element={<SubmissionsList />} />
+        <Route path="/admin/:id" element={<SubmissionDetail />} />
         <Route path="*" element={<Navigate to="/signup" replace />} />
       </Routes>
     </SignupProvider>

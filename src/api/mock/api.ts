@@ -11,14 +11,11 @@ import {
   canTransition,
   changePartnerType,
   effectiveType,
-  getStepDef,
-  isFieldVisible,
   makeContext,
   resolveSteps,
-  stepFields,
 } from '@/shared/flow'
 import { evaluateFlags, aeUsage, limitsFor, transactionsBlocked } from '@/shared/limits'
-import { requiredDocuments, validateStepInContext, validateSubmission } from '@/shared/schema'
+import { flaggableFields, requiredDocuments, validateStepInContext, validateSubmission } from '@/shared/schema'
 import type {
   FieldErrors,
   MerchantStatus,
@@ -286,21 +283,7 @@ function detail(p: PartnerRecord): SubmissionDetail {
   }
 }
 
-/** All `${stepId}.${field}` keys an admin may flag for this draft. */
-function flaggableKeys(draft: PartnerDraft): Set<string> {
-  const out = new Set<string>()
-  if (!hasPartnerType(draft.partnerType)) return out
-  const ctx = makeContext(draft.partnerType, draft.steps)
-  const cfg = getPartnerType(ctx.effectiveType)
-  for (const id of resolveSteps(draft.partnerType, draft.steps)) {
-    const def = getStepDef(cfg, id)
-    if (!def) continue
-    for (const f of stepFields(def)) {
-      if (f.kind !== 'notice' && isFieldVisible(f, draft.steps[id] ?? {}, ctx)) out.add(`${id}.${f.name}`)
-    }
-  }
-  return out
-}
+const flaggableKeys = (draft: PartnerDraft) => new Set(flaggableFields(draft).map((f) => f.key))
 
 // ---------- the API ----------
 

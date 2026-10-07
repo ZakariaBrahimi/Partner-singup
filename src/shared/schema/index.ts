@@ -160,3 +160,20 @@ export function requiredDocuments(draft: PartnerDraft) {
   }
   return out
 }
+
+/** Every `${stepId}.${field}` an admin may flag on a rejection (visible, non-notice fields of this draft). */
+export function flaggableFields(draft: PartnerDraft): Array<{ key: string; stepId: StepId; field: string }> {
+  if (!draft.partnerType) return []
+  const ctx = makeContext(draft.partnerType, draft.steps)
+  const cfg = getPartnerType(ctx.effectiveType)
+  const out: Array<{ key: string; stepId: StepId; field: string }> = []
+  for (const stepId of resolveSteps(draft.partnerType, draft.steps)) {
+    const def = getStepDef(cfg, stepId)
+    if (!def) continue
+    for (const f of stepFields(def)) {
+      if (f.kind === 'notice' || f.kind === 'password' || !isFieldVisible(f, draft.steps[stepId] ?? {}, ctx)) continue
+      out.push({ key: `${stepId}.${f.name}`, stepId, field: f.name })
+    }
+  }
+  return out
+}

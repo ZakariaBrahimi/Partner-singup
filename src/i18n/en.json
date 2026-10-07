@@ -340,7 +340,8 @@
     "network": "Something went wrong. Try again.",
     "invalidCredentials": "Email or password is incorrect.",
     "otpInvalid": "This code is not correct. Check it and try again.",
-    "notFlagged": "This item was not flagged and cannot be changed."
+    "notFlagged": "This item was not flagged and cannot be changed.",
+    "invalidState": "This action is no longer available for this submission."
   },
   "duplicate": {
     "rc": "This RC is already registered.",
@@ -618,6 +619,88 @@
       "itemsTitle": "Items to fix ({{count}})",
       "nothingFlagged": "No specific item was flagged. You can resubmit your application as it is.",
       "resubmit": "Resubmit application"
+    }
+  },
+  "admin": {
+    "badge": "Admin",
+    "list": {
+      "title": "Merchant Registration Requests",
+      "intro": "Partner submissions by KYC level, and signups that are not finished yet.",
+      "tab": {
+        "L2": "KYC Level 2",
+        "L3": "KYC Level 3",
+        "DRAFTS": "Incomplete signups"
+      },
+      "filterType": "Partner type",
+      "filterStatus": "Status",
+      "all": "All",
+      "empty": "No matching submissions.",
+      "upgrade": "Upgrade",
+      "col": {
+        "partner": "Partner",
+        "type": "Type",
+        "status": "Status",
+        "band": "Declared volume",
+        "submitted": "Submitted",
+        "lastStep": "Last completed step",
+        "email": "Email"
+      }
+    },
+    "flag": {
+      "AE_CAP_80": "AE cap 80%",
+      "AE_CAP_100": "AE cap reached",
+      "VOLUME_ABOVE_BAND": "Volume above band"
+    },
+    "detail": {
+      "back": "Back to requests",
+      "notFound": "This submission was not found.",
+      "upgradeFrom": "Upgrade from {{from}}",
+      "routed": "Routed to Enterprise by volume",
+      "draftNote": "Incomplete signup. Last completed step: {{step}}. Review actions are available after submission.",
+      "rejected": "Rejected",
+      "noActions": "No review action available for this status.",
+      "declared": "Declared activity",
+      "aeUsage": "Annual turnover vs cap",
+      "monthlyVolume": "Current monthly volume",
+      "checklist": "Review checklist – {{type}}",
+      "checklistProgress": "{{done}} of {{total}} checks done",
+      "contractSigned": "Contract signed on {{date}} by {{by}}. Go-live is allowed.",
+      "contractPending": "Contract signature pending. Go-live stays blocked until the contract is marked as signed.",
+      "documents": "Documents",
+      "preview": "Preview",
+      "docMissing": "No file uploaded.",
+      "previewAlt": "Preview of {{name}}",
+      "previewMock": "Mock preview (files are not stored in this build)",
+      "audit": "Audit log",
+      "auditEmpty": "No actions logged yet."
+    },
+    "approve": {
+      "cta": "Approve",
+      "title": "Approve this submission?",
+      "body": "Merchant and KYB become APPROVED, the partner is placed in KYC Level {{level}}, the limits for the type and band are applied and the partner is notified.",
+      "checklistWarn": "Only {{done}} of {{total}} checklist items are ticked.",
+      "contractNote": "Enterprise: the live API key stays inactive until you mark the contract as signed.",
+      "confirm": "Approve",
+      "done": "Submission approved. The partner was notified."
+    },
+    "reject": {
+      "cta": "Reject",
+      "title": "Reject this submission",
+      "body": "The partner sees the reason in the portal and receives it by email.",
+      "reason": "Reason",
+      "text": "Message to the partner",
+      "textHint": "Explain what is wrong and how to fix it.",
+      "flagged": "Flag fields and documents (optional)",
+      "flaggedHint": "Only flagged items are reopened when the partner resubmits.",
+      "confirm": "Reject and notify",
+      "done": "Submission rejected. The partner was notified by email."
+    },
+    "contract": {
+      "cta": "Mark contract as signed",
+      "title": "Mark the contract as signed?",
+      "body": "This activates the live API keys and unblocks go-live. Contract e-signature is handled outside the platform.",
+      "confirm": "Mark as signed",
+      "done": "Contract marked as signed. Live keys are active."
     }
   }
 }
