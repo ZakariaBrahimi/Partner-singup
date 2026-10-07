@@ -10,7 +10,9 @@ import { Alert } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
+import { api } from '@/api'
 import { resumeStep } from '@/shared/flow'
+import { firstIncompleteStep } from '@/shared/schema'
 import { useSignup } from './SignupContext'
 import { stepPath } from './useSteps'
 
@@ -50,8 +52,10 @@ export function Login() {
       return setKey((k) => k + 1)
     }
     // DRAFT resumes at the last completed step; submitted partners see their status.
-    if (r.data.status === 'DRAFT' || r.data.isUpgrade) {
-      nav(stepPath(resumeStep({ partnerType: r.data.partnerType, steps: {}, lastCompletedStep: r.data.lastCompletedStep }) ), { replace: true })
+    if (r.data.status === 'DRAFT') {
+      const d = await api.getDraft()
+      const target = d.ok ? (r.data.isUpgrade ? firstIncompleteStep(d.data.draft) : resumeStep(d.data.draft)) : 'type'
+      nav(stepPath(target), { replace: true })
     } else nav('/status', { replace: true })
   }
 

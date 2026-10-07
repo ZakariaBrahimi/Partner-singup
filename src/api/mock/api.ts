@@ -1,10 +1,10 @@
 // Mock implementation of PartnerApi. Server-side rules (validation on save/submit, duplicates,
 // status transitions, flagged-fields-only resubmit) are enforced here with the SAME shared code the
 // portal uses, so this doubles as an executable spec for the real backend.
-import { ANAE_ACTIVITIES } from './seed/anaeActivities'
+import { ALL_PAYMENT_CATEGORIES, ANAE_ACTIVITIES } from './seed/anaeActivities'
 import { REJECTION_REASONS, type RejectionReasonCode } from '@/shared/config/reasons'
 import { getPartnerType, hasPartnerType } from '@/shared/config/partnerTypes'
-import { EXPECTED_REVIEW_HOURS } from '@/shared/config/tbd'
+import { EXPECTED_REVIEW_HOURS, VOLUME_BANDS } from '@/shared/config/tbd'
 import { UPLOAD_LIMITS } from '@/shared/config/steps'
 import { canonicalValue, dedupeEntries } from '@/shared/dedupe'
 import {
@@ -526,6 +526,35 @@ export const mockApi: PartnerApi = {
       p.upgrade = { toType, status: 'DRAFT', rejection: null, draft: changePartnerType(base, toType), checklist: {} }
       audit(p, 'partner', 'UPGRADE_STARTED', { from, toType })
       return ok({ draft: p.upgrade.draft, summary: subjectSummary(p) })
+    }),
+
+  updateDeclaredVolume: ({ volumeBand, avgTicketDzd }) =>
+    run(() => {
+      const p = me()
+      if (!p) return fail('UNAUTHENTICATED')
+      if (p.status !== 'APPROVED' || !hasPartnerType(p.draft.partnerType)) return fail('INVALID_STATE')
+      if (!VOLUME_BANDS.some((b) => b.id === volumeBand)) return fail('VALIDATION', { fieldErrors: { volumeBand: 'invalidOption' } })
+      const before = p.draft.steps.settlement ?? {}
+      const steps = { ...p.draft.steps, settlement: { ...before, volumeBand, ...(avgTicketDzd ? { avgTicketDzd } : {}) } }
+      // A band that would turn a Company into an Enterprise is an upgrade, not a declaration update.
+      if (effectiveType(p.draft.partnerType, steps) !== effectiveType(p.draft.partnerType, p.draft.steps)) {
+        return fail('VALIDATION', { fieldErrors: { volumeBand: 'requiresUpgrade' } })
+      }
+      p.draft = { ...p.draft, steps }
+      // Limits are NOT changed here: they only change after an admin review.
+      audit(p, 'partner', 'DECLARED_VOLUME_UPDATED', { from: before.volumeBand, to: volumeBand })
+      return ok(buildStatus(p))
+    }),
+
+  checkPaymentCategory: (category) =>
+    run(() => {
+      const p = me()
+      if (!p || p.status !== 'APPROVED' || !hasPartnerType(p.draft.partnerType)) return fail('UNAUTHENTICATED')
+      const cfg = getPartnerType(effectiveType(p.draft.partnerType, p.draft.steps))
+      if (!cfg.activityRestricted) return ok({ allowed: true, allowedCategories: [...ALL_PAYMENT_CATEGORIES] as string[] })
+      const code = p.draft.steps.business?.activityCode
+      const allowed = (ANAE_ACTIVITIES.find((a) => a.code === code)?.paymentCategories ?? []) as string[]
+      return ok({ allowed: allowed.includes(category), allowedCategories: allowed })
     }),
 
   admin: {

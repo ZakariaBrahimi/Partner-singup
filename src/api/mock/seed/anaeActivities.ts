@@ -4,6 +4,8 @@
 /** Payment categories an activity may accept. TODO(compliance): confirm the category list. */
 export type PaymentCategory = 'SERVICES_PROFESSIONAL' | 'SERVICES_DIGITAL' | 'EDUCATION' | 'CRAFT' | 'FOOD' | 'TRANSPORT'
 
+export const ALL_PAYMENT_CATEGORIES: PaymentCategory[] = ['SERVICES_PROFESSIONAL', 'SERVICES_DIGITAL', 'EDUCATION', 'CRAFT', 'FOOD', 'TRANSPORT']
+
 export interface AnaeActivity {
   code: string
   labelFr: string

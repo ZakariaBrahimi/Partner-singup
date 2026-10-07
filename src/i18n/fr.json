@@ -341,7 +341,8 @@
     "invalidCredentials": "E-mail ou mot de passe incorrect.",
     "otpInvalid": "Ce code est incorrect. Vérifiez-le et réessayez.",
     "notFlagged": "Cet élément n’a pas été signalé et ne peut pas être modifié.",
-    "invalidState": "Cette action n’est plus disponible pour cette soumission."
+    "invalidState": "Cette action n’est plus disponible pour cette soumission.",
+    "requiresUpgrade": "Ce volume nécessite un compte Entreprise. Lancez plutôt une évolution."
   },
   "duplicate": {
     "rc": "Ce RC est déjà enregistré.",
@@ -611,7 +612,18 @@
         "INACTIVE": "Inactive"
       },
       "copyKey": "Copier la clé",
-      "liveBlocked": "Votre clé de production s’active à la signature du contrat."
+      "liveBlocked": "Votre clé de production s’active à la signature du contrat.",
+      "outbox": "Notifications envoyées (boîte de test)",
+      "notif": {
+        "SUBMITTED": "E-mail : nous avons reçu votre demande",
+        "APPROVED": "E-mail : votre compte est approuvé",
+        "REJECTED": "E-mail : votre demande nécessite des corrections",
+        "CONTRACT_SIGNED": "E-mail : contrat signé, vous pouvez passer en production",
+        "AE_CAP_80": "E-mail : vous avez atteint 80 % de votre plafond annuel",
+        "AE_CAP_100": "E-mail : plafond annuel atteint, compte en examen",
+        "VOLUME_ABOVE_BAND": "E-mail : volume au-dessus de votre tranche déclarée",
+        "UPGRADE_APPROVED": "E-mail : votre évolution est approuvée"
+      }
     },
     "fix": {
       "title": "Corriger et soumettre à nouveau",
@@ -619,6 +631,34 @@
       "itemsTitle": "Éléments à corriger ({{count}})",
       "nothingFlagged": "Aucun élément précis n’a été signalé. Vous pouvez soumettre à nouveau votre demande telle quelle.",
       "resubmit": "Soumettre à nouveau"
+    },
+    "post": {
+      "upgradeTo": "Passer à {{type}}",
+      "capTitle": "Chiffre d’affaires annuel (plafond légal)",
+      "capUsage": "{{used}} sur {{cap}} DZD utilisés ({{pct}} %)",
+      "cap80": "Vous avez atteint {{pct}} % du plafond annuel auto-entrepreneur. Évoluez maintenant pour continuer à accepter des paiements sans interruption.",
+      "cap100Flag": "Vous avez atteint le plafond annuel. Votre compte est signalé pour examen par notre équipe.",
+      "cap100Block": "Vous avez atteint le plafond annuel. Les nouvelles transactions sont bloquées jusqu’à votre évolution.",
+      "volumeTitle": "Votre volume dépasse votre tranche déclarée",
+      "volumeBody": "Ce mois : {{current}}. Déclaré : {{band}}. Notre équipe examinera votre compte. Veuillez mettre à jour votre volume déclaré.",
+      "volumeCta": "Mettre à jour le volume déclaré",
+      "volumeNote": "Vos plafonds restent inchangés jusqu’à ce que notre équipe examine votre nouveau volume.",
+      "volumeSave": "Enregistrer",
+      "upgradeTitle": "Faire évoluer votre compte",
+      "upgradeBody": "Votre identité et vos informations de règlement sont pré-remplies. Vous ne complétez que la nouvelle étape propre au type.",
+      "upgradeKeepsLimits": "Votre compte actuel continue de fonctionner avec ses plafonds actuels jusqu’à l’approbation de l’évolution.",
+      "upgradeState": {
+        "DRAFT": "En cours",
+        "PENDING_APPROVAL": "En examen",
+        "REJECTED": "À corriger"
+      },
+      "upgradeContinue": "Poursuivre l’évolution",
+      "restrictionTitle": "Restriction d’activité",
+      "restrictionBody": "Les liens de paiement et factures ne sont autorisés que dans les catégories associées à votre code d’activité ANAE ({{code}}).",
+      "restrictionTry": "Tester une catégorie de lien de paiement",
+      "restrictionCheck": "Vérifier",
+      "categoryAllowed": "Cette catégorie est autorisée pour votre activité.",
+      "categoryDenied": "Votre activité ANAE n’autorise pas cette catégorie. Autorisées : {{allowed}}."
     }
   },
   "admin": {

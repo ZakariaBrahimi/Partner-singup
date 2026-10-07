@@ -177,3 +177,17 @@ export function flaggableFields(draft: PartnerDraft): Array<{ key: string; stepI
   }
   return out
 }
+
+/**
+ * First step (after the type step) whose data is missing or invalid, or 'review' when everything is valid.
+ * Used by upgrades: shared data is pre-filled, so only what the new type adds is asked.
+ */
+export function firstIncompleteStep(draft: PartnerDraft): StepId {
+  if (!draft.partnerType) return 'type'
+  const ctx = makeContext(draft.partnerType, draft.steps)
+  for (const id of resolveSteps(draft.partnerType, draft.steps)) {
+    if (id === 'type' || id === 'review') continue
+    if (Object.keys(validateStepInContext(id, ctx)).length > 0) return id
+  }
+  return 'review'
+}

@@ -28,6 +28,12 @@ export function useStatus() {
   React.useEffect(() => {
     void load()
   }, [load])
+  // The dev panel (QA only) changes volumes behind the page's back.
+  React.useEffect(() => {
+    const h = () => void load()
+    window.addEventListener('mizaniya:dev-changed', h)
+    return () => window.removeEventListener('mizaniya:dev-changed', h)
+  }, [load])
   return { status, error, reload: load }
 }
 
@@ -59,6 +65,7 @@ export function StatusPage() {
       {status.status === 'REJECTED' && status.rejection && <RejectionCard status={status} />}
       {status.status === 'APPROVED' && <Approved status={status} />}
       {status.status === 'APPROVED' && <PostApproval status={status} onChange={reload} />}
+      <Outbox status={status} />
     </PortalLayout>
   )
 }
@@ -68,7 +75,7 @@ function AccountAside({ onLogout, name }: { onLogout: () => void; name: string }
   return (
     <div className="grid gap-3 text-sm text-white/90">
       <p className="font-semibold text-white" dir="auto">{name}</p>
-      <Button variant="outline" size="sm" className="w-fit border-white text-white hover:bg-white/10 hover:text-white" onClick={onLogout}>
+      <Button variant="outline" size="sm" className="w-fit border-white bg-transparent text-white hover:bg-white/10" onClick={onLogout}>
         {t('ui.logout')}
       </Button>
     </div>
@@ -244,5 +251,25 @@ function Approved({ status }: { status: PartnerStatus }) {
         {status.goLiveBlocked && <p className="mt-3 text-sm text-ink-2">{t('ui.status.liveBlocked')}</p>}
       </Card>
     </>
+  )
+}
+
+/** Emails and portal notifications sent to this partner (mock outbox, useful to test notifications). */
+function Outbox({ status }: { status: PartnerStatus }) {
+  const { t, i18n } = useTranslation()
+  if (status.notifications.length === 0) return null
+  return (
+    <Card data-testid="outbox">
+      <CardTitle>{t('ui.status.outbox')}</CardTitle>
+      <ul className="grid gap-2 text-sm">
+        {[...status.notifications].reverse().map((n) => (
+          <li key={n.id} className="flex flex-wrap items-center gap-2 border-b border-line pb-2 last:border-0">
+            <Badge variant="neutral">{n.channel}</Badge>
+            <span className="font-medium">{t(`ui.status.notif.${n.kind}`)}</span>
+            <time className="text-ink-2" dateTime={n.at}>{new Intl.DateTimeFormat(i18n.language, { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(n.at))}</time>
+          </li>
+        ))}
+      </ul>
+    </Card>
   )
 }

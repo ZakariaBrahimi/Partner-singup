@@ -42,17 +42,24 @@ export function FixResubmit() {
   if (!s.ready) return <Loading />
   if (missing || !s.summary) return <Navigate to="/login" replace />
   if (!status || !draft) return <Loading />
-  if (status.status !== 'REJECTED' || !status.rejection) return <Navigate to="/status" replace />
-  return <FixForm status={status} draft={draft} />
+  const rejection = rejectionOf(status)
+  if (!rejection) return <Navigate to="/status" replace />
+  return <FixForm draft={draft} rejection={rejection} />
 }
 
-function FixForm({ status, draft }: { status: PartnerStatus; draft: PartnerDraft }) {
+/** The rejection being fixed: the signup's, or an upgrade's. */
+function rejectionOf(status: PartnerStatus) {
+  if (status.upgrade?.status === 'REJECTED') return status.upgrade.rejection ?? null
+  return status.status === 'REJECTED' ? status.rejection : null
+}
+
+function FixForm({ draft, rejection }: { draft: PartnerDraft; rejection: NonNullable<PartnerStatus['rejection']> }) {
   const { t } = useTranslation()
   const nav = useNavigate()
   const s = useSignup()
   const ctx = makeContext(draft.partnerType!, draft.steps)
   const cfg = getPartnerType(ctx.effectiveType)
-  const flagged = status.rejection!.flaggedFields
+  const flagged = rejection.flaggedFields
 
   // flagged key -> field definition (skipping fields that are no longer visible)
   const targets = flagged
@@ -114,8 +121,8 @@ function FixForm({ status, draft }: { status: PartnerStatus; draft: PartnerDraft
     <PortalLayout>
       <PageHeader title={t('ui.fix.title')} intro={t('ui.fix.intro')} />
       <Alert tone="error" data-testid="fix-reason">
-        <p className="font-semibold">{t(`reasons.${status.rejection!.code}`)}</p>
-        <p dir="auto">{status.rejection!.text}</p>
+        <p className="font-semibold">{t(`reasons.${rejection.code}`)}</p>
+        <p dir="auto">{rejection.text}</p>
       </Alert>
       <ErrorSummary items={items} focusKey={key} />
       <form noValidate className="grid gap-6" onSubmit={(e) => { e.preventDefault(); void submit() }} aria-busy={busy}>

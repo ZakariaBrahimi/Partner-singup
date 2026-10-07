@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { SubmissionDetail } from '@/admin/SubmissionDetail'
 import { SubmissionsList } from '@/admin/SubmissionsList'
+import { DevPanel } from '@/DevPanel'
 import { FixResubmit } from '@/portal/FixResubmit'
 import { Helper } from '@/portal/Helper'
 import { Login } from '@/portal/Login'
@@ -28,6 +29,7 @@ export function AppRoutes() {
         <Route path="/admin/:id" element={<SubmissionDetail />} />
         <Route path="*" element={<Navigate to="/signup" replace />} />
       </Routes>
+      <DevPanel />
     </SignupProvider>
   )
 }

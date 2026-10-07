@@ -201,6 +201,10 @@ export interface PartnerApi {
   getPartnerStatus(): Promise<ApiResult<PartnerStatus>>
   resubmit(input: { changes: Record<StepId, StepData> }): Promise<ApiResult<{ status: MerchantStatus }>>
   startUpgrade(toType: PartnerType): Promise<ApiResult<{ draft: PartnerDraft; summary: PartnerSummary }>>
+  /** Approved partner updates the declared monthly volume (limits only change after an admin review). */
+  updateDeclaredVolume(input: { volumeBand: string; avgTicketDzd?: number }): Promise<ApiResult<PartnerStatus>>
+  /** Is a payment-link/invoice category allowed for this partner? (AE: only categories mapped to the ANAE code.) */
+  checkPaymentCategory(category: string): Promise<ApiResult<{ allowed: boolean; allowedCategories: string[] }>>
   // admin
   admin: {
     listSubmissions(filter: SubmissionFilter): Promise<ApiResult<SubmissionRow[]>>

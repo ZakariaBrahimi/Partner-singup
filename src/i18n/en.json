@@ -341,7 +341,8 @@
     "invalidCredentials": "Email or password is incorrect.",
     "otpInvalid": "This code is not correct. Check it and try again.",
     "notFlagged": "This item was not flagged and cannot be changed.",
-    "invalidState": "This action is no longer available for this submission."
+    "invalidState": "This action is no longer available for this submission.",
+    "requiresUpgrade": "This volume requires an Enterprise account. Start an upgrade instead."
   },
   "duplicate": {
     "rc": "This RC is already registered.",
@@ -611,7 +612,18 @@
         "INACTIVE": "Inactive"
       },
       "copyKey": "Copy key",
-      "liveBlocked": "Your live key activates when the contract is signed."
+      "liveBlocked": "Your live key activates when the contract is signed.",
+      "outbox": "Notifications sent (test outbox)",
+      "notif": {
+        "SUBMITTED": "Email: we received your application",
+        "APPROVED": "Email: your account is approved",
+        "REJECTED": "Email: your application needs changes",
+        "CONTRACT_SIGNED": "Email: contract signed, you can go live",
+        "AE_CAP_80": "Email: you reached 80% of your annual cap",
+        "AE_CAP_100": "Email: annual cap reached, account under review",
+        "VOLUME_ABOVE_BAND": "Email: volume above your declared band",
+        "UPGRADE_APPROVED": "Email: your upgrade is approved"
+      }
     },
     "fix": {
       "title": "Fix and resubmit",
@@ -619,6 +631,34 @@
       "itemsTitle": "Items to fix ({{count}})",
       "nothingFlagged": "No specific item was flagged. You can resubmit your application as it is.",
       "resubmit": "Resubmit application"
+    },
+    "post": {
+      "upgradeTo": "Upgrade to {{type}}",
+      "capTitle": "Annual turnover (legal cap)",
+      "capUsage": "{{used}} of {{cap}} DZD used ({{pct}}%)",
+      "cap80": "You reached {{pct}}% of the annual auto-entrepreneur cap. Upgrade now to keep accepting payments without interruption.",
+      "cap100Flag": "You reached the annual cap. Your account is flagged for review by our team.",
+      "cap100Block": "You reached the annual cap. New transactions are blocked until you upgrade.",
+      "volumeTitle": "Your volume is above your declared band",
+      "volumeBody": "This month: {{current}}. Declared: {{band}}. Our team will review your account. Please update your declared volume.",
+      "volumeCta": "Update declared volume",
+      "volumeNote": "Your limits stay the same until our team reviews your new volume.",
+      "volumeSave": "Save",
+      "upgradeTitle": "Upgrade your account",
+      "upgradeBody": "Your identity and settlement details are pre-filled. You only complete the new type-specific step.",
+      "upgradeKeepsLimits": "Your current account keeps working at its current limits until the upgrade is approved.",
+      "upgradeState": {
+        "DRAFT": "In progress",
+        "PENDING_APPROVAL": "Under review",
+        "REJECTED": "Needs changes"
+      },
+      "upgradeContinue": "Continue upgrade",
+      "restrictionTitle": "Activity restriction",
+      "restrictionBody": "Payment links and invoices are only allowed in the categories mapped to your ANAE activity code ({{code}}).",
+      "restrictionTry": "Try a payment link category",
+      "restrictionCheck": "Check",
+      "categoryAllowed": "This category is allowed for your activity.",
+      "categoryDenied": "Your ANAE activity does not allow this category. Allowed: {{allowed}}."
     }
   },
   "admin": {
