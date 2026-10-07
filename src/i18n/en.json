@@ -1,0 +1,378 @@
+{
+  "types": {
+    "AUTO_ENTREPRENEUR": {
+      "name": "Auto-entrepreneur",
+      "desc": "Freelancers and service providers holding an ANAE card.",
+      "needs": "ANAE card, ID, NIN, selfie, RIB or CCP"
+    },
+    "INDIVIDUAL_TRADER": {
+      "name": "Individual trader or artisan",
+      "desc": "Shop owners and individual e-merchants (personne physique).",
+      "needs": "RC or artisan card (RAM), NIF, ID, NIN, selfie, RIB or CCP"
+    },
+    "COMPANY": {
+      "name": "Company",
+      "desc": "EURL, SARL, SNC and other legal entities.",
+      "needs": "RC, NIF, NIS, statuts, manager ID, beneficial owners, company RIB"
+    },
+    "ENTERPRISE": {
+      "name": "Enterprise",
+      "desc": "High-volume companies and groups.",
+      "needs": "Company documents, delegation of signing authority, financial statements, AML questionnaire"
+    }
+  },
+  "products": {
+    "PAYMENT_LINKS": "Payment links",
+    "INVOICES": "Invoices",
+    "QR": "QR payments",
+    "WEBSITE_CHECKOUT": "Website checkout",
+    "POS": "POS",
+    "API": "API",
+    "TEAM_USERS": "Team users",
+    "REFUNDS": "Refunds",
+    "CUSTOM_PRICING": "Custom pricing",
+    "SUB_MERCHANTS": "Sub-merchants",
+    "DEDICATED_SUPPORT": "Dedicated support"
+  },
+  "steps": {
+    "type": {
+      "title": "Choose your partner type",
+      "intro": "Your legal status decides which form you fill."
+    },
+    "account": {
+      "title": "Account & legal representative",
+      "intro": "Create your account and verify who you are."
+    },
+    "business": {
+      "title": "Business details",
+      "intro": "Tell us about your registration and activity.",
+      "AUTO_ENTREPRENEUR": {
+        "title": "Auto-entrepreneur details"
+      },
+      "INDIVIDUAL_TRADER": {
+        "title": "Trader details"
+      },
+      "COMPANY": {
+        "title": "Company details"
+      },
+      "ENTERPRISE": {
+        "title": "Company details"
+      }
+    },
+    "settlement": {
+      "title": "Settlement account & expected volume",
+      "intro": "Where we pay you, and how much you expect to process."
+    },
+    "enterpriseDocs": {
+      "title": "Enterprise documents",
+      "intro": "Additional documents required for Enterprise partners."
+    },
+    "review": {
+      "title": "Review & submit",
+      "intro": "Check everything before you submit."
+    }
+  },
+  "sections": {
+    "account": {
+      "contact": "Contact & password",
+      "legalRep": "Legal representative"
+    },
+    "business": {
+      "registration": "Registration",
+      "identity": "Business identity",
+      "activity": "Activity & sales channels",
+      "company": "Company",
+      "contact": "Company contact",
+      "representation": "Representation",
+      "owners": "Beneficial owners"
+    },
+    "settlement": {
+      "account": "Settlement account",
+      "volume": "Expected activity"
+    },
+    "enterpriseDocs": {
+      "contractNotice": "Contract",
+      "documents": "Documents",
+      "technicalContact": "Technical contact"
+    },
+    "review": {
+      "declarations": "Declarations"
+    }
+  },
+  "fields": {
+    "email": {
+      "label": "Email"
+    },
+    "phone": {
+      "label": "Mobile phone",
+      "hint": "Without the +213 prefix"
+    },
+    "password": {
+      "label": "Password"
+    },
+    "fullName": {
+      "label": "Full name (as on your ID)"
+    },
+    "legalRole": {
+      "label": "Role",
+      "options": {
+        "OWNER": "Owner",
+        "MANAGER": "Manager (gérant)",
+        "AUTHORISED_SIGNATORY": "Authorised signatory"
+      }
+    },
+    "idType": {
+      "label": "ID document",
+      "options": {
+        "CNI": "National ID (CNI)",
+        "PASSPORT": "Passport"
+      }
+    },
+    "idFront": {
+      "label": "ID – front"
+    },
+    "idBack": {
+      "label": "ID – back"
+    },
+    "nin": {
+      "label": "NIN"
+    },
+    "selfie": {
+      "label": "Selfie"
+    },
+    "settlementType": {
+      "label": "Account type",
+      "options": {
+        "RIB": "Bank (RIB)",
+        "CCP": "Algérie Poste (CCP)"
+      }
+    },
+    "accountNumber": {
+      "label": "Account number",
+      "hint": "Bank RIB or Algérie Poste CCP"
+    },
+    "holderName": {
+      "label": "Account holder name"
+    },
+    "volumeBand": {
+      "label": "Expected monthly volume"
+    },
+    "avgTicketDzd": {
+      "label": "Average ticket (DZD)"
+    },
+    "acceptDeclarations": {
+      "label": "I declare the information is accurate and accept the terms."
+    },
+    "anaeCardNumber": {
+      "label": "ANAE card number"
+    },
+    "anaeCardPhoto": {
+      "label": "Photo of the ANAE card"
+    },
+    "tradeName": {
+      "label": "Name customers will see"
+    },
+    "wilaya": {
+      "label": "Wilaya"
+    },
+    "commune": {
+      "label": "Commune"
+    },
+    "streetAddress": {
+      "label": "Street address"
+    },
+    "activityCode": {
+      "label": "Activity"
+    },
+    "salesChannel": {
+      "label": "Sales channels",
+      "options": {
+        "IN_PERSON": "In person",
+        "ONLINE": "Online",
+        "BOTH": "Both"
+      }
+    },
+    "website": {
+      "label": "Website URL",
+      "hint": "Must end in .com.dz"
+    },
+    "registrationType": {
+      "label": "Registration type",
+      "options": {
+        "RC": "RC (personne physique)",
+        "RAM": "Artisan card (RAM)"
+      }
+    },
+    "registrationNumber": {
+      "label": "Registration number"
+    },
+    "registrationPhoto": {
+      "label": "Photo of the registration"
+    },
+    "nif": {
+      "label": "NIF"
+    },
+    "nifCertificate": {
+      "label": "NIF certificate"
+    },
+    "companyName": {
+      "label": "Company name"
+    },
+    "legalForm": {
+      "label": "Legal form",
+      "options": {
+        "EURL": "EURL",
+        "SARL": "SARL",
+        "SNC": "SNC",
+        "SPA": "SPA",
+        "OTHER": "Other"
+      }
+    },
+    "legalFormOther": {
+      "label": "Legal form (specify)"
+    },
+    "rc": {
+      "label": "RC number"
+    },
+    "rcPhoto": {
+      "label": "Photo of the RC"
+    },
+    "nis": {
+      "label": "NIS"
+    },
+    "statuts": {
+      "label": "Statuts (PDF)"
+    },
+    "companyPhone": {
+      "label": "Company phone"
+    },
+    "companyEmail": {
+      "label": "Company email"
+    },
+    "repIsManager": {
+      "label": "Is the legal representative the registered manager?",
+      "options": {
+        "YES": "Yes",
+        "NO": "No"
+      }
+    },
+    "managerId": {
+      "label": "Registered manager’s ID"
+    },
+    "delegation": {
+      "label": "Delegation of signing authority"
+    },
+    "beneficialOwners": {
+      "label": "Beneficial owners"
+    },
+    "delegationOfAuthority": {
+      "label": "Delegation of signing authority"
+    },
+    "financialStatements": {
+      "label": "Latest financial statements (PDF)"
+    },
+    "amlQuestionnaire": {
+      "label": "AML questionnaire"
+    },
+    "techContactName": {
+      "label": "Technical contact – full name"
+    },
+    "techContactEmail": {
+      "label": "Technical contact – email"
+    },
+    "techContactPhone": {
+      "label": "Technical contact – phone"
+    },
+    "collectsForSubMerchants": {
+      "label": "Will you collect payments on behalf of sub-merchants?",
+      "options": {
+        "YES": "Yes",
+        "NO": "No"
+      }
+    },
+    "aeCapNotice": {
+      "label": "The auto-entrepreneur status carries an annual turnover cap of 5,000,000 DZD."
+    },
+    "aePhysicalGoodsNotice": {
+      "label": "Selling physical goods online requires an RC or RAM registration.",
+      "link": "Choose Individual trader instead"
+    },
+    "contractNotice": {
+      "label": "A signed contract is required before you can go live. Our team will contact you after review."
+    }
+  },
+  "errors": {
+    "required": "This field is required.",
+    "invalidEmail": "Enter a valid email address.",
+    "invalidPhone": "Enter a valid Algerian phone number.",
+    "invalidRc": "This RC number format is not valid.",
+    "invalidRam": "This artisan card number format is not valid.",
+    "invalidNif": "This NIF format is not valid.",
+    "invalidNis": "This NIS format is not valid.",
+    "invalidNin": "This NIN format is not valid.",
+    "invalidAnaeCard": "This ANAE card number format is not valid.",
+    "invalidRib": "This RIB format is not valid.",
+    "invalidCcp": "This CCP format is not valid.",
+    "websiteComDz": "Online sales must run on a site hosted in Algeria with a .com.dz address.",
+    "tooShort": "This value is too short.",
+    "fullNameRequired": "Enter first and last name.",
+    "invalidNumber": "Enter a number greater than 0.",
+    "invalidPercentage": "Enter a percentage between 1 and 100.",
+    "passwordTooShort": "Use at least 8 characters.",
+    "invalidOption": "Choose one of the options.",
+    "notVerified": "Verify this with the 6-digit code.",
+    "mustAccept": "You must accept to continue.",
+    "ownersRequired": "Add at least one beneficial owner.",
+    "ownersInvalid": "Fix the highlighted beneficial owners.",
+    "ownershipOver100": "Ownership percentages add up to more than 100%.",
+    "ownerIdMissing": "ID document missing for this owner.",
+    "amlIncomplete": "Complete the AML questionnaire.",
+    "holderMustMatchCompany": "Company and Enterprise must use an account in the company’s name.",
+    "fileTooLarge": "File is larger than 5 MB.",
+    "fileType": "Only JPG, PNG or PDF files are accepted.",
+    "uploadFailed": "Upload failed. Try again.",
+    "network": "Something went wrong. Try again."
+  },
+  "duplicate": {
+    "rc": "This RC is already registered.",
+    "nif": "This NIF is already registered.",
+    "nis": "This NIS is already registered.",
+    "nin": "This NIN is already registered.",
+    "anaeCardNumber": "This ANAE card is already registered.",
+    "rib": "This RIB is already registered.",
+    "ccp": "This CCP is already registered.",
+    "email": "This email is already registered.",
+    "phone": "This phone number is already registered."
+  },
+  "checklist": {
+    "aeCardVerified": "ANAE card number and photo verified (manual check)",
+    "idMatchesSelfie": "ID matches selfie and NIN",
+    "activityEligible": "Activity code eligible for payment categories",
+    "settlementMatchesHolder": "Settlement account holder matches the partner",
+    "registrationValid": "RC / RAM valid and photo legible",
+    "nifValid": "NIF valid and certificate provided",
+    "websiteComDz": "Website uses a .com.dz domain (if online)",
+    "rcValid": "RC valid and photo legible",
+    "nifNisValid": "NIF and NIS valid",
+    "statutsReviewed": "Statuts reviewed",
+    "managerIdVerified": "Manager and legal representative identity verified",
+    "beneficialOwnersComplete": "Beneficial owners complete and ID verified",
+    "delegationIfNotManager": "Delegation provided when representative is not the manager",
+    "settlementInCompanyName": "Settlement account is in the company’s name",
+    "delegationReviewed": "Delegation of signing authority reviewed",
+    "financialStatementsReviewed": "Financial statements reviewed",
+    "amlQuestionnaireReviewed": "AML questionnaire reviewed",
+    "technicalContactVerified": "Technical contact verified"
+  },
+  "reasons": {
+    "DOCUMENT_UNREADABLE": "Document unreadable",
+    "DOCUMENT_MISMATCH": "Document does not match the data entered",
+    "DOCUMENT_EXPIRED": "Document expired",
+    "IDENTITY_NOT_VERIFIED": "Identity could not be verified",
+    "REGISTRATION_INVALID": "Registration (RC / RAM / ANAE) invalid",
+    "ACTIVITY_NOT_ELIGIBLE": "Activity not eligible",
+    "SETTLEMENT_ACCOUNT_MISMATCH": "Settlement account does not match the partner",
+    "BENEFICIAL_OWNERS_INCOMPLETE": "Beneficial owners incomplete",
+    "OTHER": "Other"
+  }
+}

@@ -1,0 +1,378 @@
+{
+  "types": {
+    "AUTO_ENTREPRENEUR": {
+      "name": "مقاول ذاتي",
+      "desc": "أصحاب المهن الحرة ومقدمو الخدمات الحاصلون على بطاقة ANAE.",
+      "needs": "بطاقة ANAE، وثيقة الهوية، رقم التعريف الوطني، صورة سيلفي، RIB أو CCP"
+    },
+    "INDIVIDUAL_TRADER": {
+      "name": "تاجر فردي أو حرفي",
+      "desc": "أصحاب المحلات والتجار الإلكترونيون الأفراد (شخص طبيعي).",
+      "needs": "سجل تجاري أو بطاقة حرفي (RAM)، NIF، وثيقة الهوية، NIN، سيلفي، RIB أو CCP"
+    },
+    "COMPANY": {
+      "name": "شركة",
+      "desc": "مؤسسة ذات شخص وحيد، ش.ذ.م.م، شركة تضامن وغيرها من الأشخاص المعنوية.",
+      "needs": "سجل تجاري، NIF، NIS، القانون الأساسي، هوية المسير، المستفيدون الفعليون، RIB الشركة"
+    },
+    "ENTERPRISE": {
+      "name": "مؤسسة كبرى",
+      "desc": "الشركات والمجموعات ذات الحجم الكبير.",
+      "needs": "وثائق الشركة، تفويض التوقيع، القوائم المالية، استبيان مكافحة تبييض الأموال"
+    }
+  },
+  "products": {
+    "PAYMENT_LINKS": "روابط الدفع",
+    "INVOICES": "الفواتير",
+    "QR": "الدفع عبر QR",
+    "WEBSITE_CHECKOUT": "الدفع عبر الموقع",
+    "POS": "نقطة البيع",
+    "API": "واجهة API",
+    "TEAM_USERS": "مستخدمو الفريق",
+    "REFUNDS": "الاسترجاعات",
+    "CUSTOM_PRICING": "تسعير مخصص",
+    "SUB_MERCHANTS": "التجار الفرعيون",
+    "DEDICATED_SUPPORT": "دعم مخصص"
+  },
+  "steps": {
+    "type": {
+      "title": "اختر نوع الشريك",
+      "intro": "وضعك القانوني يحدد النموذج الذي ستملؤه."
+    },
+    "account": {
+      "title": "الحساب والممثل القانوني",
+      "intro": "أنشئ حسابك وتحقق من هويتك."
+    },
+    "business": {
+      "title": "معلومات النشاط",
+      "intro": "أخبرنا عن تسجيلك ونشاطك.",
+      "AUTO_ENTREPRENEUR": {
+        "title": "معلومات المقاول الذاتي"
+      },
+      "INDIVIDUAL_TRADER": {
+        "title": "معلومات التاجر"
+      },
+      "COMPANY": {
+        "title": "معلومات الشركة"
+      },
+      "ENTERPRISE": {
+        "title": "معلومات الشركة"
+      }
+    },
+    "settlement": {
+      "title": "حساب التسوية والحجم المتوقع",
+      "intro": "أين ندفع لك والحجم الذي تتوقعه."
+    },
+    "enterpriseDocs": {
+      "title": "وثائق المؤسسة الكبرى",
+      "intro": "وثائق إضافية مطلوبة لشركاء المؤسسات الكبرى."
+    },
+    "review": {
+      "title": "المراجعة والإرسال",
+      "intro": "راجع كل شيء قبل الإرسال."
+    }
+  },
+  "sections": {
+    "account": {
+      "contact": "الاتصال وكلمة المرور",
+      "legalRep": "الممثل القانوني"
+    },
+    "business": {
+      "registration": "التسجيل",
+      "identity": "هوية النشاط",
+      "activity": "النشاط وقنوات البيع",
+      "company": "الشركة",
+      "contact": "اتصال الشركة",
+      "representation": "التمثيل",
+      "owners": "المستفيدون الفعليون"
+    },
+    "settlement": {
+      "account": "حساب التسوية",
+      "volume": "النشاط المتوقع"
+    },
+    "enterpriseDocs": {
+      "contractNotice": "العقد",
+      "documents": "الوثائق",
+      "technicalContact": "جهة الاتصال التقنية"
+    },
+    "review": {
+      "declarations": "الإقرارات"
+    }
+  },
+  "fields": {
+    "email": {
+      "label": "البريد الإلكتروني"
+    },
+    "phone": {
+      "label": "الهاتف المحمول",
+      "hint": "بدون الرمز +213"
+    },
+    "password": {
+      "label": "كلمة المرور"
+    },
+    "fullName": {
+      "label": "الاسم الكامل (كما في وثيقة الهوية)"
+    },
+    "legalRole": {
+      "label": "الصفة",
+      "options": {
+        "OWNER": "مالك",
+        "MANAGER": "مسير",
+        "AUTHORISED_SIGNATORY": "مفوض بالتوقيع"
+      }
+    },
+    "idType": {
+      "label": "وثيقة الهوية",
+      "options": {
+        "CNI": "بطاقة التعريف الوطنية",
+        "PASSPORT": "جواز السفر"
+      }
+    },
+    "idFront": {
+      "label": "الهوية – الوجه"
+    },
+    "idBack": {
+      "label": "الهوية – الظهر"
+    },
+    "nin": {
+      "label": "رقم التعريف الوطني (NIN)"
+    },
+    "selfie": {
+      "label": "صورة سيلفي"
+    },
+    "settlementType": {
+      "label": "نوع الحساب",
+      "options": {
+        "RIB": "بنك (RIB)",
+        "CCP": "بريد الجزائر (CCP)"
+      }
+    },
+    "accountNumber": {
+      "label": "رقم الحساب",
+      "hint": "RIB بنكي أو CCP بريد الجزائر"
+    },
+    "holderName": {
+      "label": "اسم صاحب الحساب"
+    },
+    "volumeBand": {
+      "label": "الحجم الشهري المتوقع"
+    },
+    "avgTicketDzd": {
+      "label": "متوسط قيمة العملية (دج)"
+    },
+    "acceptDeclarations": {
+      "label": "أقر بصحة المعلومات وأوافق على الشروط."
+    },
+    "anaeCardNumber": {
+      "label": "رقم بطاقة ANAE"
+    },
+    "anaeCardPhoto": {
+      "label": "صورة بطاقة ANAE"
+    },
+    "tradeName": {
+      "label": "الاسم الذي يراه زبائنك"
+    },
+    "wilaya": {
+      "label": "الولاية"
+    },
+    "commune": {
+      "label": "البلدية"
+    },
+    "streetAddress": {
+      "label": "العنوان"
+    },
+    "activityCode": {
+      "label": "النشاط"
+    },
+    "salesChannel": {
+      "label": "قنوات البيع",
+      "options": {
+        "IN_PERSON": "حضورياً",
+        "ONLINE": "عبر الإنترنت",
+        "BOTH": "كلاهما"
+      }
+    },
+    "website": {
+      "label": "رابط الموقع",
+      "hint": "يجب أن ينتهي بـ .com.dz"
+    },
+    "registrationType": {
+      "label": "نوع التسجيل",
+      "options": {
+        "RC": "سجل تجاري (شخص طبيعي)",
+        "RAM": "بطاقة حرفي (RAM)"
+      }
+    },
+    "registrationNumber": {
+      "label": "رقم التسجيل"
+    },
+    "registrationPhoto": {
+      "label": "صورة وثيقة التسجيل"
+    },
+    "nif": {
+      "label": "رقم التعريف الجبائي (NIF)"
+    },
+    "nifCertificate": {
+      "label": "شهادة NIF"
+    },
+    "companyName": {
+      "label": "اسم الشركة"
+    },
+    "legalForm": {
+      "label": "الشكل القانوني",
+      "options": {
+        "EURL": "EURL",
+        "SARL": "SARL",
+        "SNC": "SNC",
+        "SPA": "SPA",
+        "OTHER": "أخرى"
+      }
+    },
+    "legalFormOther": {
+      "label": "الشكل القانوني (حدد)"
+    },
+    "rc": {
+      "label": "رقم السجل التجاري"
+    },
+    "rcPhoto": {
+      "label": "صورة السجل التجاري"
+    },
+    "nis": {
+      "label": "رقم التعريف الإحصائي (NIS)"
+    },
+    "statuts": {
+      "label": "القانون الأساسي (PDF)"
+    },
+    "companyPhone": {
+      "label": "هاتف الشركة"
+    },
+    "companyEmail": {
+      "label": "البريد الإلكتروني للشركة"
+    },
+    "repIsManager": {
+      "label": "هل الممثل القانوني هو المسير المسجل؟",
+      "options": {
+        "YES": "نعم",
+        "NO": "لا"
+      }
+    },
+    "managerId": {
+      "label": "هوية المسير المسجل"
+    },
+    "delegation": {
+      "label": "تفويض التوقيع"
+    },
+    "beneficialOwners": {
+      "label": "المستفيدون الفعليون"
+    },
+    "delegationOfAuthority": {
+      "label": "تفويض التوقيع"
+    },
+    "financialStatements": {
+      "label": "آخر القوائم المالية (PDF)"
+    },
+    "amlQuestionnaire": {
+      "label": "استبيان مكافحة تبييض الأموال"
+    },
+    "techContactName": {
+      "label": "جهة الاتصال التقنية – الاسم الكامل"
+    },
+    "techContactEmail": {
+      "label": "جهة الاتصال التقنية – البريد"
+    },
+    "techContactPhone": {
+      "label": "جهة الاتصال التقنية – الهاتف"
+    },
+    "collectsForSubMerchants": {
+      "label": "هل ستحصّل مدفوعات نيابة عن تجار فرعيين؟",
+      "options": {
+        "YES": "نعم",
+        "NO": "لا"
+      }
+    },
+    "aeCapNotice": {
+      "label": "يخضع نظام المقاول الذاتي لسقف رقم أعمال سنوي قدره 5,000,000 دج."
+    },
+    "aePhysicalGoodsNotice": {
+      "label": "بيع السلع المادية عبر الإنترنت يتطلب سجلاً تجارياً أو بطاقة حرفي (RAM).",
+      "link": "اختر تاجر فردي بدلاً من ذلك"
+    },
+    "contractNotice": {
+      "label": "يتطلب العقد الموقّع قبل الانطلاق الفعلي. سيتواصل معك فريقنا بعد المراجعة."
+    }
+  },
+  "errors": {
+    "required": "هذا الحقل مطلوب.",
+    "invalidEmail": "أدخل بريداً إلكترونياً صالحاً.",
+    "invalidPhone": "أدخل رقم هاتف جزائري صالحاً.",
+    "invalidRc": "صيغة رقم السجل التجاري غير صالحة.",
+    "invalidRam": "صيغة رقم بطاقة الحرفي غير صالحة.",
+    "invalidNif": "صيغة NIF غير صالحة.",
+    "invalidNis": "صيغة NIS غير صالحة.",
+    "invalidNin": "صيغة NIN غير صالحة.",
+    "invalidAnaeCard": "صيغة رقم بطاقة ANAE غير صالحة.",
+    "invalidRib": "صيغة RIB غير صالحة.",
+    "invalidCcp": "صيغة CCP غير صالحة.",
+    "websiteComDz": "يجب أن تتم المبيعات عبر الإنترنت على موقع مستضاف في الجزائر بعنوان .com.dz.",
+    "tooShort": "هذه القيمة قصيرة جداً.",
+    "fullNameRequired": "أدخل الاسم واللقب.",
+    "invalidNumber": "أدخل رقماً أكبر من 0.",
+    "invalidPercentage": "أدخل نسبة بين 1 و100.",
+    "passwordTooShort": "استخدم 8 أحرف على الأقل.",
+    "invalidOption": "اختر أحد الخيارات.",
+    "notVerified": "تحقق باستخدام الرمز المكوّن من 6 أرقام.",
+    "mustAccept": "يجب الموافقة للمتابعة.",
+    "ownersRequired": "أضف مستفيداً فعلياً واحداً على الأقل.",
+    "ownersInvalid": "صحّح بيانات المستفيدين الفعليين المحددة.",
+    "ownershipOver100": "مجموع نسب الملكية يتجاوز 100%.",
+    "ownerIdMissing": "وثيقة الهوية مفقودة لهذا المستفيد.",
+    "amlIncomplete": "أكمل استبيان مكافحة تبييض الأموال.",
+    "holderMustMatchCompany": "يجب أن يكون حساب الشركة والمؤسسة الكبرى باسم الشركة.",
+    "fileTooLarge": "حجم الملف أكبر من 5 ميغابايت.",
+    "fileType": "الملفات المقبولة: JPG أو PNG أو PDF فقط.",
+    "uploadFailed": "فشل الرفع. حاول مرة أخرى.",
+    "network": "حدث خطأ ما. حاول مرة أخرى."
+  },
+  "duplicate": {
+    "rc": "السجل التجاري مسجل مسبقاً.",
+    "nif": "NIF مسجل مسبقاً.",
+    "nis": "NIS مسجل مسبقاً.",
+    "nin": "NIN مسجل مسبقاً.",
+    "anaeCardNumber": "بطاقة ANAE مسجل مسبقاً.",
+    "rib": "RIB مسجل مسبقاً.",
+    "ccp": "CCP مسجل مسبقاً.",
+    "email": "هذا البريد الإلكتروني مسجل مسبقاً.",
+    "phone": "رقم الهاتف هذا مسجل مسبقاً."
+  },
+  "checklist": {
+    "aeCardVerified": "التحقق من رقم وصورة بطاقة ANAE (يدوياً)",
+    "idMatchesSelfie": "الهوية تطابق السيلفي ورقم NIN",
+    "activityEligible": "رمز النشاط مؤهل لفئات الدفع",
+    "settlementMatchesHolder": "صاحب حساب التسوية يطابق الشريك",
+    "registrationValid": "السجل / RAM صالح والصورة واضحة",
+    "nifValid": "NIF صالح والشهادة مقدمة",
+    "websiteComDz": "الموقع بنطاق .com.dz (عند البيع عبر الإنترنت)",
+    "rcValid": "السجل التجاري صالح والصورة واضحة",
+    "nifNisValid": "NIF وNIS صالحان",
+    "statutsReviewed": "تمت مراجعة القانون الأساسي",
+    "managerIdVerified": "تم التحقق من هوية المسير والممثل القانوني",
+    "beneficialOwnersComplete": "المستفيدون الفعليون مكتملون والهويات متحقق منها",
+    "delegationIfNotManager": "التفويض مقدم عندما لا يكون الممثل هو المسير",
+    "settlementInCompanyName": "حساب التسوية باسم الشركة",
+    "delegationReviewed": "تمت مراجعة تفويض التوقيع",
+    "financialStatementsReviewed": "تمت مراجعة القوائم المالية",
+    "amlQuestionnaireReviewed": "تمت مراجعة استبيان مكافحة تبييض الأموال",
+    "technicalContactVerified": "تم التحقق من جهة الاتصال التقنية"
+  },
+  "reasons": {
+    "DOCUMENT_UNREADABLE": "وثيقة غير مقروءة",
+    "DOCUMENT_MISMATCH": "الوثيقة لا تطابق البيانات المدخلة",
+    "DOCUMENT_EXPIRED": "وثيقة منتهية الصلاحية",
+    "IDENTITY_NOT_VERIFIED": "تعذر التحقق من الهوية",
+    "REGISTRATION_INVALID": "التسجيل (RC / RAM / ANAE) غير صالح",
+    "ACTIVITY_NOT_ELIGIBLE": "النشاط غير مؤهل",
+    "SETTLEMENT_ACCOUNT_MISMATCH": "حساب التسوية لا يطابق الشريك",
+    "BENEFICIAL_OWNERS_INCOMPLETE": "المستفيدون الفعليون غير مكتملين",
+    "OTHER": "أخرى"
+  }
+}

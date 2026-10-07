@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* Brand tokens (from the story's visual design table). Fonts load in index.html. */
+@theme {
+  --color-navy: #1f4e67;
+  --color-accent: #f8e81c;
+  --color-ink: #13232e;
+  --color-ink-2: #4a5d6a;
+  --color-surface: #f4f6f7;
+  --color-danger: #b42318;
+  --color-success: #1e7a4c;
+  --color-warn-bg: #fff6d6;
+  --color-warn-border: #e8d27a;
+  --color-warn-ink: #4a3400;
+  --color-line: #dce3e7;
+  --color-field: #7a8c97;
+
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --radius-card: 16px;
+  --radius-field: 10px;
+  --radius-btn: 12px;
+}
+
+/* shadcn-style semantic variables mapped to the brand palette. */
+:root {
+  --background: var(--color-surface);
+  --foreground: var(--color-ink);
+  --card: #ffffff;
+  --card-foreground: var(--color-ink);
+  --primary: var(--color-navy);
+  --primary-foreground: #ffffff;
+  --muted-foreground: var(--color-ink-2);
+  --border: var(--color-line);
+  --input: var(--color-field);
+  --ring: var(--color-navy);
+  --destructive: var(--color-danger);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+}
+
+@layer base {
+  * { border-color: var(--color-line); }
+  html, body, #root { min-height: 100%; }
+  body {
+    background: var(--color-surface);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  /* 3px navy focus outline everywhere */
+  :focus-visible { outline: 3px solid var(--color-navy); outline-offset: 2px; }
+}

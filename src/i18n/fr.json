@@ -1,0 +1,378 @@
+{
+  "types": {
+    "AUTO_ENTREPRENEUR": {
+      "name": "Auto-entrepreneur",
+      "desc": "Freelances et prestataires de services titulaires d’une carte ANAE.",
+      "needs": "Carte ANAE, pièce d’identité, NIN, selfie, RIB ou CCP"
+    },
+    "INDIVIDUAL_TRADER": {
+      "name": "Commerçant individuel ou artisan",
+      "desc": "Propriétaires de boutique et e-commerçants individuels (personne physique).",
+      "needs": "RC ou carte d’artisan (RAM), NIF, pièce d’identité, NIN, selfie, RIB ou CCP"
+    },
+    "COMPANY": {
+      "name": "Entreprise (société)",
+      "desc": "EURL, SARL, SNC et autres personnes morales.",
+      "needs": "RC, NIF, NIS, statuts, pièce du gérant, bénéficiaires effectifs, RIB de la société"
+    },
+    "ENTERPRISE": {
+      "name": "Grande entreprise",
+      "desc": "Sociétés à fort volume et groupes.",
+      "needs": "Documents de la société, délégation de signature, états financiers, questionnaire LBC"
+    }
+  },
+  "products": {
+    "PAYMENT_LINKS": "Liens de paiement",
+    "INVOICES": "Factures",
+    "QR": "Paiement par QR",
+    "WEBSITE_CHECKOUT": "Paiement sur site web",
+    "POS": "TPE / POS",
+    "API": "API",
+    "TEAM_USERS": "Utilisateurs d’équipe",
+    "REFUNDS": "Remboursements",
+    "CUSTOM_PRICING": "Tarification sur mesure",
+    "SUB_MERCHANTS": "Sous-marchands",
+    "DEDICATED_SUPPORT": "Support dédié"
+  },
+  "steps": {
+    "type": {
+      "title": "Choisissez votre type de partenaire",
+      "intro": "Votre statut juridique détermine le formulaire à remplir."
+    },
+    "account": {
+      "title": "Compte et représentant légal",
+      "intro": "Créez votre compte et vérifiez votre identité."
+    },
+    "business": {
+      "title": "Informations sur l’activité",
+      "intro": "Parlez-nous de votre enregistrement et de votre activité.",
+      "AUTO_ENTREPRENEUR": {
+        "title": "Informations auto-entrepreneur"
+      },
+      "INDIVIDUAL_TRADER": {
+        "title": "Informations commerçant"
+      },
+      "COMPANY": {
+        "title": "Informations sur la société"
+      },
+      "ENTERPRISE": {
+        "title": "Informations sur la société"
+      }
+    },
+    "settlement": {
+      "title": "Compte de règlement et volume attendu",
+      "intro": "Où nous vous versons les fonds et le volume attendu."
+    },
+    "enterpriseDocs": {
+      "title": "Documents Entreprise",
+      "intro": "Documents supplémentaires requis pour les partenaires Entreprise."
+    },
+    "review": {
+      "title": "Vérifier et soumettre",
+      "intro": "Vérifiez tout avant de soumettre."
+    }
+  },
+  "sections": {
+    "account": {
+      "contact": "Contact et mot de passe",
+      "legalRep": "Représentant légal"
+    },
+    "business": {
+      "registration": "Enregistrement",
+      "identity": "Identité de l’activité",
+      "activity": "Activité et canaux de vente",
+      "company": "Société",
+      "contact": "Contact de la société",
+      "representation": "Représentation",
+      "owners": "Bénéficiaires effectifs"
+    },
+    "settlement": {
+      "account": "Compte de règlement",
+      "volume": "Activité attendue"
+    },
+    "enterpriseDocs": {
+      "contractNotice": "Contrat",
+      "documents": "Documents",
+      "technicalContact": "Contact technique"
+    },
+    "review": {
+      "declarations": "Déclarations"
+    }
+  },
+  "fields": {
+    "email": {
+      "label": "E-mail"
+    },
+    "phone": {
+      "label": "Téléphone mobile",
+      "hint": "Sans le préfixe +213"
+    },
+    "password": {
+      "label": "Mot de passe"
+    },
+    "fullName": {
+      "label": "Nom complet (comme sur la pièce d’identité)"
+    },
+    "legalRole": {
+      "label": "Fonction",
+      "options": {
+        "OWNER": "Propriétaire",
+        "MANAGER": "Gérant",
+        "AUTHORISED_SIGNATORY": "Signataire autorisé"
+      }
+    },
+    "idType": {
+      "label": "Pièce d’identité",
+      "options": {
+        "CNI": "CNI",
+        "PASSPORT": "Passeport"
+      }
+    },
+    "idFront": {
+      "label": "Pièce – recto"
+    },
+    "idBack": {
+      "label": "Pièce – verso"
+    },
+    "nin": {
+      "label": "NIN"
+    },
+    "selfie": {
+      "label": "Selfie"
+    },
+    "settlementType": {
+      "label": "Type de compte",
+      "options": {
+        "RIB": "Banque (RIB)",
+        "CCP": "Algérie Poste (CCP)"
+      }
+    },
+    "accountNumber": {
+      "label": "Numéro de compte",
+      "hint": "RIB bancaire ou CCP Algérie Poste"
+    },
+    "holderName": {
+      "label": "Nom du titulaire"
+    },
+    "volumeBand": {
+      "label": "Volume mensuel attendu"
+    },
+    "avgTicketDzd": {
+      "label": "Panier moyen (DZD)"
+    },
+    "acceptDeclarations": {
+      "label": "Je déclare que les informations sont exactes et j’accepte les conditions."
+    },
+    "anaeCardNumber": {
+      "label": "Numéro de carte ANAE"
+    },
+    "anaeCardPhoto": {
+      "label": "Photo de la carte ANAE"
+    },
+    "tradeName": {
+      "label": "Nom visible par vos clients"
+    },
+    "wilaya": {
+      "label": "Wilaya"
+    },
+    "commune": {
+      "label": "Commune"
+    },
+    "streetAddress": {
+      "label": "Adresse"
+    },
+    "activityCode": {
+      "label": "Activité"
+    },
+    "salesChannel": {
+      "label": "Canaux de vente",
+      "options": {
+        "IN_PERSON": "En personne",
+        "ONLINE": "En ligne",
+        "BOTH": "Les deux"
+      }
+    },
+    "website": {
+      "label": "URL du site web",
+      "hint": "Doit se terminer par .com.dz"
+    },
+    "registrationType": {
+      "label": "Type d’enregistrement",
+      "options": {
+        "RC": "RC (personne physique)",
+        "RAM": "Carte d’artisan (RAM)"
+      }
+    },
+    "registrationNumber": {
+      "label": "Numéro d’enregistrement"
+    },
+    "registrationPhoto": {
+      "label": "Photo du document d’enregistrement"
+    },
+    "nif": {
+      "label": "NIF"
+    },
+    "nifCertificate": {
+      "label": "Attestation NIF"
+    },
+    "companyName": {
+      "label": "Raison sociale"
+    },
+    "legalForm": {
+      "label": "Forme juridique",
+      "options": {
+        "EURL": "EURL",
+        "SARL": "SARL",
+        "SNC": "SNC",
+        "SPA": "SPA",
+        "OTHER": "Autre"
+      }
+    },
+    "legalFormOther": {
+      "label": "Forme juridique (préciser)"
+    },
+    "rc": {
+      "label": "Numéro RC"
+    },
+    "rcPhoto": {
+      "label": "Photo du RC"
+    },
+    "nis": {
+      "label": "NIS"
+    },
+    "statuts": {
+      "label": "Statuts (PDF)"
+    },
+    "companyPhone": {
+      "label": "Téléphone de la société"
+    },
+    "companyEmail": {
+      "label": "E-mail de la société"
+    },
+    "repIsManager": {
+      "label": "Le représentant légal est-il le gérant enregistré ?",
+      "options": {
+        "YES": "Oui",
+        "NO": "Non"
+      }
+    },
+    "managerId": {
+      "label": "Pièce d’identité du gérant"
+    },
+    "delegation": {
+      "label": "Délégation de signature"
+    },
+    "beneficialOwners": {
+      "label": "Bénéficiaires effectifs"
+    },
+    "delegationOfAuthority": {
+      "label": "Délégation de signature"
+    },
+    "financialStatements": {
+      "label": "Derniers états financiers (PDF)"
+    },
+    "amlQuestionnaire": {
+      "label": "Questionnaire LBC/FT"
+    },
+    "techContactName": {
+      "label": "Contact technique – nom complet"
+    },
+    "techContactEmail": {
+      "label": "Contact technique – e-mail"
+    },
+    "techContactPhone": {
+      "label": "Contact technique – téléphone"
+    },
+    "collectsForSubMerchants": {
+      "label": "Collecterez-vous des paiements pour le compte de sous-marchands ?",
+      "options": {
+        "YES": "Oui",
+        "NO": "Non"
+      }
+    },
+    "aeCapNotice": {
+      "label": "Le statut d’auto-entrepreneur est soumis à un plafond de chiffre d’affaires annuel de 5 000 000 DZD."
+    },
+    "aePhysicalGoodsNotice": {
+      "label": "La vente de biens physiques en ligne nécessite un RC ou un RAM.",
+      "link": "Choisir Commerçant individuel"
+    },
+    "contractNotice": {
+      "label": "Un contrat signé est requis avant la mise en production. Notre équipe vous contactera après l’examen."
+    }
+  },
+  "errors": {
+    "required": "Ce champ est obligatoire.",
+    "invalidEmail": "Saisissez une adresse e-mail valide.",
+    "invalidPhone": "Saisissez un numéro de téléphone algérien valide.",
+    "invalidRc": "Le format du numéro RC n’est pas valide.",
+    "invalidRam": "Le format du numéro de carte d’artisan n’est pas valide.",
+    "invalidNif": "Le format du NIF n’est pas valide.",
+    "invalidNis": "Le format du NIS n’est pas valide.",
+    "invalidNin": "Le format du NIN n’est pas valide.",
+    "invalidAnaeCard": "Le format du numéro de carte ANAE n’est pas valide.",
+    "invalidRib": "Le format du RIB n’est pas valide.",
+    "invalidCcp": "Le format du CCP n’est pas valide.",
+    "websiteComDz": "Les ventes en ligne doivent passer par un site hébergé en Algérie avec une adresse .com.dz.",
+    "tooShort": "Cette valeur est trop courte.",
+    "fullNameRequired": "Saisissez le nom et le prénom.",
+    "invalidNumber": "Saisissez un nombre supérieur à 0.",
+    "invalidPercentage": "Saisissez un pourcentage entre 1 et 100.",
+    "passwordTooShort": "Utilisez au moins 8 caractères.",
+    "invalidOption": "Choisissez l’une des options.",
+    "notVerified": "Vérifiez avec le code à 6 chiffres.",
+    "mustAccept": "Vous devez accepter pour continuer.",
+    "ownersRequired": "Ajoutez au moins un bénéficiaire effectif.",
+    "ownersInvalid": "Corrigez les bénéficiaires effectifs signalés.",
+    "ownershipOver100": "Les pourcentages de détention dépassent 100 %.",
+    "ownerIdMissing": "Pièce d’identité manquante pour ce bénéficiaire.",
+    "amlIncomplete": "Complétez le questionnaire LBC/FT.",
+    "holderMustMatchCompany": "Les comptes Société et Entreprise doivent être au nom de la société.",
+    "fileTooLarge": "Le fichier dépasse 5 Mo.",
+    "fileType": "Seuls les fichiers JPG, PNG ou PDF sont acceptés.",
+    "uploadFailed": "Échec du téléversement. Réessayez.",
+    "network": "Un problème est survenu. Réessayez."
+  },
+  "duplicate": {
+    "rc": "Ce RC est déjà enregistré.",
+    "nif": "Ce NIF est déjà enregistré.",
+    "nis": "Ce NIS est déjà enregistré.",
+    "nin": "Ce NIN est déjà enregistré.",
+    "anaeCardNumber": "Cette carte ANAE est déjà enregistrée.",
+    "rib": "Ce RIB est déjà enregistré.",
+    "ccp": "Ce CCP est déjà enregistré.",
+    "email": "Cet e-mail est déjà enregistré.",
+    "phone": "Ce numéro de téléphone est déjà enregistré."
+  },
+  "checklist": {
+    "aeCardVerified": "Numéro et photo de la carte ANAE vérifiés (contrôle manuel)",
+    "idMatchesSelfie": "La pièce correspond au selfie et au NIN",
+    "activityEligible": "Code d’activité éligible aux catégories de paiement",
+    "settlementMatchesHolder": "Titulaire du compte conforme au partenaire",
+    "registrationValid": "RC / RAM valide et photo lisible",
+    "nifValid": "NIF valide et attestation fournie",
+    "websiteComDz": "Site en .com.dz (si vente en ligne)",
+    "rcValid": "RC valide et photo lisible",
+    "nifNisValid": "NIF et NIS valides",
+    "statutsReviewed": "Statuts examinés",
+    "managerIdVerified": "Identité du gérant et du représentant légal vérifiée",
+    "beneficialOwnersComplete": "Bénéficiaires effectifs complets et identités vérifiées",
+    "delegationIfNotManager": "Délégation fournie si le représentant n’est pas le gérant",
+    "settlementInCompanyName": "Compte de règlement au nom de la société",
+    "delegationReviewed": "Délégation de signature examinée",
+    "financialStatementsReviewed": "États financiers examinés",
+    "amlQuestionnaireReviewed": "Questionnaire LBC/FT examiné",
+    "technicalContactVerified": "Contact technique vérifié"
+  },
+  "reasons": {
+    "DOCUMENT_UNREADABLE": "Document illisible",
+    "DOCUMENT_MISMATCH": "Document non conforme aux données saisies",
+    "DOCUMENT_EXPIRED": "Document expiré",
+    "IDENTITY_NOT_VERIFIED": "Identité non vérifiée",
+    "REGISTRATION_INVALID": "Enregistrement (RC / RAM / ANAE) invalide",
+    "ACTIVITY_NOT_ELIGIBLE": "Activité non éligible",
+    "SETTLEMENT_ACCOUNT_MISMATCH": "Compte de règlement non conforme au partenaire",
+    "BENEFICIAL_OWNERS_INCOMPLETE": "Bénéficiaires effectifs incomplets",
+    "OTHER": "Autre"
+  }
+}
