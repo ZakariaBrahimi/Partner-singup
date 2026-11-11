@@ -742,5 +742,55 @@
       "confirm": "Marquer comme signé",
       "done": "Contrat marqué comme signé. Les clés de production sont actives."
     }
+  },
+  "landing": {
+    "badge": "Portail partenaires",
+    "title": "Créez votre compte en quelques minutes. Testez tout. Passez en production une fois vérifié.",
+    "subtitle": "Il suffit d’un e-mail et d’un téléphone vérifiés. Vous accédez tout de suite à un mode test avec serveur fictif, et vous vérifiez votre activité quand vous êtes prêt à encaisser de vrais paiements.",
+    "cta": "Créer un compte",
+    "login": "Se connecter",
+    "ctaNote": "Aucun document requis pour commencer à tester.",
+    "how": {
+      "title": "Comment ça marche",
+      "account": {
+        "title": "Créez votre compte",
+        "body": "E-mail et téléphone, chacun vérifié par un code à 6 chiffres, et un mot de passe."
+      },
+      "test": {
+        "title": "Testez immédiatement",
+        "body": "Clés sandbox et serveur fictif avec tous les produits. Connectez-vous vite et essayez librement."
+      },
+      "verify": {
+        "title": "Vérifiez votre activité",
+        "body": "Choisissez votre type : auto-entrepreneur, commerçant individuel, société ou grande entreprise, puis remplissez son formulaire."
+      },
+      "live": {
+        "title": "Abonnez-vous et passez en production",
+        "body": "Une fois approuvé, payez votre abonnement et vos clés de production sont activées."
+      }
+    },
+    "modes": {
+      "title": "Mode test et mode production",
+      "test": "Mode test – disponible dès l’inscription",
+      "testItems": {
+        "keys": "Clés API sandbox, aucun argent réel",
+        "products": "Tous les produits avec de fausses données : liens, factures, QR, paiement, TPE, API",
+        "reset": "Réinitialisez vos données de test à tout moment"
+      },
+      "live": "Mode production – après vérification et abonnement",
+      "liveItems": {
+        "verified": "Approuvé par notre équipe pour votre type de partenaire",
+        "subscription": "Abonnement actif (Entreprise : contrat signé)",
+        "limits": "Clés de production et plafonds selon votre type et volume"
+      }
+    },
+    "types": {
+      "title": "Quel type de partenaire êtes-vous ?",
+      "intro": "Votre statut juridique détermine le formulaire à remplir lors de la vérification."
+    },
+    "final": {
+      "title": "Prêt à essayer ?",
+      "body": "Créez votre compte et commencez à tester dès aujourd’hui."
+    }
   }
 }

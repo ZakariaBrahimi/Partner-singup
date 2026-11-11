@@ -4,6 +4,7 @@ import { SubmissionsList } from '@/admin/SubmissionsList'
 import { DevPanel } from '@/DevPanel'
 import { FixResubmit } from '@/portal/FixResubmit'
 import { Helper } from '@/portal/Helper'
+import { Landing } from '@/portal/Landing'
 import { Login } from '@/portal/Login'
 import { NoLegalStatus } from '@/portal/NoLegalStatus'
 import { SignupProvider } from '@/portal/SignupContext'
@@ -16,7 +17,7 @@ export function AppRoutes() {
   return (
     <SignupProvider>
       <Routes>
-        <Route path="/" element={<Navigate to="/signup" replace />} />
+        <Route path="/" element={<Landing />} />
         <Route path="/signup" element={<TypeStep />} />
         <Route path="/signup/helper" element={<Helper />} />
         <Route path="/signup/no-legal-status" element={<NoLegalStatus />} />

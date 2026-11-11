@@ -742,5 +742,55 @@
       "confirm": "Mark as signed",
       "done": "Contract marked as signed. Live keys are active."
     }
+  },
+  "landing": {
+    "badge": "Partner portal",
+    "title": "Create your account in minutes. Test everything. Go live when you are verified.",
+    "subtitle": "All you need is a verified email and phone number. You get a test mode with a mock server straight away, and you verify your business when you are ready to accept real payments.",
+    "cta": "Create an account",
+    "login": "Log in",
+    "ctaNote": "No documents needed to start testing.",
+    "how": {
+      "title": "How it works",
+      "account": {
+        "title": "Create your account",
+        "body": "Email and phone, each verified with a 6-digit code, and a password."
+      },
+      "test": {
+        "title": "Test right away",
+        "body": "Sandbox keys and a mock server with every product. Log in fast and try freely."
+      },
+      "verify": {
+        "title": "Verify your business",
+        "body": "Choose your type: auto-entrepreneur, individual trader, company or enterprise, then complete its form."
+      },
+      "live": {
+        "title": "Subscribe and go live",
+        "body": "Once approved, pay your subscription and your live keys are activated."
+      }
+    },
+    "modes": {
+      "title": "Test mode and Live mode",
+      "test": "Test mode – available right after signup",
+      "testItems": {
+        "keys": "Sandbox API keys, no real money",
+        "products": "Every product with fake data: links, invoices, QR, checkout, POS, API",
+        "reset": "Reset your test data any time"
+      },
+      "live": "Live mode – after verification and subscription",
+      "liveItems": {
+        "verified": "Approved by our team for your partner type",
+        "subscription": "Active subscription (Enterprise: signed contract)",
+        "limits": "Live keys and the limits of your type and volume"
+      }
+    },
+    "types": {
+      "title": "Which partner type are you?",
+      "intro": "Your legal status decides which form you fill when you verify."
+    },
+    "final": {
+      "title": "Ready to try it?",
+      "body": "Create your account and start testing today."
+    }
   }
 }
