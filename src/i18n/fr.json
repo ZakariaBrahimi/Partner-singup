@@ -824,6 +824,36 @@
         "2": "Un contrat signé est requis avant la mise en production : les clés de production restent inactives jusqu’à la signature.",
         "3": "Le compte de règlement doit être au nom de la société."
       }
+    },
+    "compare": {
+      "title": "Comparer tous les types de partenaire",
+      "intro": "Les mêmes informations côte à côte : ce que chaque type inclut, ce qu’il demande et ses limites.",
+      "group": {
+        "overview": "Vue d’ensemble",
+        "products": "Produits",
+        "documents": "Documents à téléverser",
+        "numbers": "Numéros et déclarations",
+        "rules": "Règles et plafonds"
+      },
+      "bestFor": "Idéal pour",
+      "kycLevel": "Niveau KYC",
+      "steps": "Étapes de vérification",
+      "upgrades": "Peut évoluer vers",
+      "none": "–",
+      "limitsBasis": "Comment les plafonds sont fixés",
+      "limits": {
+        "band": "Tranche de volume déclarée",
+        "capAndBand": "Plafond légal annuel + tranche de volume",
+        "contract": "Par contrat"
+      },
+      "annualCap": "Plafond légal de chiffre d’affaires annuel",
+      "settlement": "Compte de règlement (RIB ou CCP)",
+      "settlementPerson": "À votre nom",
+      "settlementCompany": "Au nom de la société (obligatoire)",
+      "legalRole": "Fonction du représentant légal demandée",
+      "activityRestricted": "Paiements limités aux catégories de votre activité ANAE",
+      "contract": "Contrat signé avant la mise en production",
+      "note": "Les valeurs des plafonds par transaction, mensuels et de versement sont en cours de finalisation et dépendent de votre tranche de volume mensuel déclarée (Entreprise : par contrat). Une société au-dessus du seuil de volume Entreprise est orientée vers Entreprise."
     }
   }
 }

@@ -46,6 +46,6 @@ describe('landing page', () => {
     renderApp('/')
     await screen.findByTestId('landing-type-COMPANY')
     expect(document.body.textContent).not.toMatch(/999,?999/)
-    expect(screen.getAllByText(/being finalised/).length).toBe(3) // Enterprise is by contract
+    expect(screen.getAllByText(/being finalised/).length).toBe(4) // 3 type cards (Enterprise is by contract) + the comparison note
   })
 })

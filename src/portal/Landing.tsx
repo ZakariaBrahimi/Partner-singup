@@ -9,6 +9,7 @@ import { listPartnerTypes } from '@/shared/config/partnerTypes'
 import type { PartnerTypeConfig } from '@/shared/config/schemaTypes'
 import { typeRequirements } from '@/shared/requirements'
 import { fmtDzd } from '@/lib/format'
+import { ComparisonTable } from './ComparisonTable'
 
 const STEPS = ['account', 'test', 'verify', 'live'] as const
 const TEST_ITEMS = ['keys', 'products', 'reset'] as const
@@ -29,7 +30,7 @@ export function Landing() {
         </div>
       </header>
 
-      <main className="mx-auto grid max-w-5xl gap-12 px-4 py-12">
+      <main className="mx-auto grid max-w-5xl grid-cols-[minmax(0,1fr)] gap-12 px-4 py-12">
         <section className="grid gap-5">
           <p className="w-fit rounded-full bg-accent px-3 py-1 text-sm font-bold text-ink">{t('landing.badge')}</p>
           <h1 className="max-w-3xl text-4xl font-bold leading-tight md:text-5xl">{t('landing.title')}</h1>
@@ -101,6 +102,8 @@ export function Landing() {
             ))}
           </ul>
         </section>
+
+        <ComparisonTable />
 
         <section className="rounded-card bg-primary p-8 text-white">
           <h2 className="text-2xl font-bold">{t('landing.final.title')}</h2>

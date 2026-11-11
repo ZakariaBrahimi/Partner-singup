@@ -824,6 +824,36 @@
         "2": "A signed contract is required before going live: live keys stay inactive until it is signed.",
         "3": "The settlement account must be in the company’s name."
       }
+    },
+    "compare": {
+      "title": "Compare all partner types",
+      "intro": "The same information side by side: what each type includes, what it asks for, and how it is limited.",
+      "group": {
+        "overview": "Overview",
+        "products": "Products",
+        "documents": "Documents to upload",
+        "numbers": "Numbers and declarations",
+        "rules": "Rules and limits"
+      },
+      "bestFor": "Best for",
+      "kycLevel": "KYC level",
+      "steps": "Verification steps",
+      "upgrades": "Can upgrade to",
+      "none": "–",
+      "limitsBasis": "How limits are set",
+      "limits": {
+        "band": "Declared volume band",
+        "capAndBand": "Legal annual cap + volume band",
+        "contract": "By contract"
+      },
+      "annualCap": "Legal annual turnover cap",
+      "settlement": "Settlement account (RIB or CCP)",
+      "settlementPerson": "In your name",
+      "settlementCompany": "In the company’s name (required)",
+      "legalRole": "Legal representative role asked",
+      "activityRestricted": "Payments limited to your ANAE activity categories",
+      "contract": "Signed contract before going live",
+      "note": "Per-transaction, monthly and payout limit values are being finalised and depend on your declared monthly volume band (Enterprise: by contract). A Company above the Enterprise volume threshold is routed to Enterprise."
     }
   }
 }
