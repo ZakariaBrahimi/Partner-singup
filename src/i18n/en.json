@@ -785,12 +785,45 @@
       }
     },
     "types": {
-      "title": "Which partner type are you?",
-      "intro": "Your legal status decides which form you fill when you verify."
+      "title": "Partner types: who they are for, what you need and the limits",
+      "intro": "Your legal status decides which form you fill when you verify.",
+      "products": "Included products",
+      "notIncluded": "Not included",
+      "documents": "Documents to upload",
+      "numbers": "Numbers and declarations to provide",
+      "limits": "Limits and restrictions",
+      "conditional": "if applicable",
+      "explain": {
+        "AUTO_ENTREPRENEUR": "The simplest way to start: you are registered with ANAE and sell services. You choose your activity from the official ANAE list, which decides what you can accept.",
+        "INDIVIDUAL_TRADER": "For a shop or an individual e-merchant registered as a natural person with an RC or an artisan card (RAM). You can sell in person and online (on a .com.dz site).",
+        "COMPANY": "For legal entities (EURL, SARL, SNC, SPA…). You declare the beneficial owners, and the settlement account must be in the company’s name. Includes the API, team users and refunds.",
+        "ENTERPRISE": "For high-volume companies and groups. Same documents as a company plus delegation of signing authority, financial statements and an AML questionnaire. Pricing and limits are set by contract."
+      }
     },
     "final": {
       "title": "Ready to try it?",
       "body": "Create your account and start testing today."
+    },
+    "limits": {
+      "general": "Per-transaction, monthly and payout limits depend on your declared monthly volume band (exact values are being finalised). Volume above your band triggers a review.",
+      "cap": "Legal annual turnover cap: {{cap}} DZD. At 80% you get a warning and an upgrade offer; at 100% the account is flagged for review.",
+      "AUTO_ENTREPRENEUR": {
+        "1": "Payment links and invoices are only allowed in the categories mapped to your ANAE activity.",
+        "2": "Services only by default: selling physical goods online needs an RC or artisan card (choose Individual trader)."
+      },
+      "INDIVIDUAL_TRADER": {
+        "1": "Online sales must run on a site hosted in Algeria with a .com.dz address (Law 18-05)."
+      },
+      "COMPANY": {
+        "1": "Online sales must run on a site hosted in Algeria with a .com.dz address (Law 18-05).",
+        "2": "The settlement account must be in the company’s name.",
+        "3": "If your declared volume is above the Enterprise threshold, you are routed to Enterprise: extra documents and a signed contract before going live."
+      },
+      "ENTERPRISE": {
+        "1": "Limits and pricing are set by contract.",
+        "2": "A signed contract is required before going live: live keys stay inactive until it is signed.",
+        "3": "The settlement account must be in the company’s name."
+      }
     }
   }
 }

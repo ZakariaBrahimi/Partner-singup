@@ -785,12 +785,45 @@
       }
     },
     "types": {
-      "title": "Quel type de partenaire êtes-vous ?",
-      "intro": "Votre statut juridique détermine le formulaire à remplir lors de la vérification."
+      "title": "Types de partenaire : pour qui, ce qu’il faut fournir et les limites",
+      "intro": "Votre statut juridique détermine le formulaire à remplir lors de la vérification.",
+      "products": "Produits inclus",
+      "notIncluded": "Non inclus",
+      "documents": "Documents à téléverser",
+      "numbers": "Numéros et déclarations à fournir",
+      "limits": "Plafonds et restrictions",
+      "conditional": "selon le cas",
+      "explain": {
+        "AUTO_ENTREPRENEUR": "Le moyen le plus simple de démarrer : vous êtes inscrit à l’ANAE et vendez des services. Vous choisissez votre activité dans la liste officielle ANAE, ce qui détermine ce que vous pouvez encaisser.",
+        "INDIVIDUAL_TRADER": "Pour une boutique ou un e-commerçant individuel inscrit comme personne physique avec un RC ou une carte d’artisan (RAM). Vous pouvez vendre en personne et en ligne (sur un site .com.dz).",
+        "COMPANY": "Pour les personnes morales (EURL, SARL, SNC, SPA…). Vous déclarez les bénéficiaires effectifs et le compte de règlement doit être au nom de la société. Inclut l’API, les utilisateurs d’équipe et les remboursements.",
+        "ENTERPRISE": "Pour les sociétés à fort volume et les groupes. Mêmes documents qu’une société, plus la délégation de signature, les états financiers et un questionnaire LBC. Tarifs et plafonds fixés par contrat."
+      }
     },
     "final": {
       "title": "Prêt à essayer ?",
       "body": "Créez votre compte et commencez à tester dès aujourd’hui."
+    },
+    "limits": {
+      "general": "Les plafonds par transaction, mensuels et de versement dépendent de votre tranche de volume mensuel déclarée (valeurs en cours de finalisation). Un volume supérieur à votre tranche déclenche un examen.",
+      "cap": "Plafond légal de chiffre d’affaires annuel : {{cap}} DZD. À 80 % vous recevez un avertissement et une offre d’évolution ; à 100 % le compte est signalé pour examen.",
+      "AUTO_ENTREPRENEUR": {
+        "1": "Les liens de paiement et factures ne sont autorisés que dans les catégories associées à votre activité ANAE.",
+        "2": "Services uniquement par défaut : vendre des biens physiques en ligne nécessite un RC ou une carte d’artisan (choisissez Commerçant individuel)."
+      },
+      "INDIVIDUAL_TRADER": {
+        "1": "Les ventes en ligne doivent passer par un site hébergé en Algérie avec une adresse .com.dz (loi 18-05)."
+      },
+      "COMPANY": {
+        "1": "Les ventes en ligne doivent passer par un site hébergé en Algérie avec une adresse .com.dz (loi 18-05).",
+        "2": "Le compte de règlement doit être au nom de la société.",
+        "3": "Si votre volume déclaré dépasse le seuil Entreprise, vous êtes orienté vers Entreprise : documents supplémentaires et contrat signé avant la mise en production."
+      },
+      "ENTERPRISE": {
+        "1": "Les plafonds et tarifs sont fixés par contrat.",
+        "2": "Un contrat signé est requis avant la mise en production : les clés de production restent inactives jusqu’à la signature.",
+        "3": "Le compte de règlement doit être au nom de la société."
+      }
     }
   }
 }
